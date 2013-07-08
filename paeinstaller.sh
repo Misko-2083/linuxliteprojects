@@ -41,7 +41,7 @@ while [ opt != '' ]
         case $opt in
         1) clear;
         option_picked "Launched Browser with Manual";
-        dwb https://www.linuxliteos.com/manual/install.html#updates &
+    firefox https://www.linuxliteos.com/manual/install.html#updates &
     show_menu;
         ;;
 
