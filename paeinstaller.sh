@@ -17,11 +17,11 @@ show_menu(){
                               fi
       )
     echo -e "${CHECKPAE}"
-    echo -e "${MENU}*********************************************${NORMAL}"
+    echo -e "${MENU}**************************************************${NORMAL}"
     echo -e "${MENU}**${NUMBER} 1)${MENU} Read More (This will launch the Help Manual) ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 2)${MENU} Install the PAE Kernel ${NORMAL}"
     echo -e "${MENU}**${NUMBER} 3)${MENU} Reboot into the new kernel ${NORMAL}"
-    echo -e "${MENU}*********************************************${NORMAL}"
+    echo -e "${MENU}**************************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please choose a menu option then press Enter or press ${RED_TEXT}Enter now to exit.${NORMAL}"
     read opt
 }
