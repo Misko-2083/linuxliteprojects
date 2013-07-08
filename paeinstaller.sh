@@ -1,4 +1,6 @@
 #!/bin/bash
+# Script to check for pae capability, and then to install a pae kernel.
+# Author: John 'ShaggyTwoDope' Jenkins
 
 show_menu(){
     NORMAL=`echo "\033[m"`
@@ -9,16 +11,16 @@ show_menu(){
     ENTER_LINE=`echo "\033[33m"`
     CHECKPAE=$(
     if [ -z "(grep -w pae /proc/cpuinfo)" ]; then
-     echo "${RED_TEXT}Your Processor is NOT PAE Capable, Please Press enter to exit."; 
+     echo "${RED_TEXT}Your Processor is NOT PAE capable, please press Enter to exit."; 
                                 else
-     echo "${MENU}Your Processor is PAE Capable, You can procede with installing.${NORMAL}";
+     echo "${MENU}Your Processor is PAE capable, you can procede with installation.${NORMAL}";
                               fi
       )
     echo -e "${CHECKPAE}"
     echo -e "${MENU}*********************************************${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 1)${MENU} Read More (This will launch the manual) ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 2)${MENU} Install PAE Kernel ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 3)${MENU} Reboot into new kernel ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 1)${MENU} Read More (This will launch the Help Manual) ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 2)${MENU} Install the PAE Kernel ${NORMAL}"
+    echo -e "${MENU}**${NUMBER} 3)${MENU} Reboot into the new kernel ${NORMAL}"
     echo -e "${MENU}*********************************************${NORMAL}"
     echo -e "${ENTER_LINE}Please enter a menu option and enter or ${RED_TEXT}enter to exit.${NORMAL}"
     read opt
@@ -40,7 +42,7 @@ while [ opt != '' ]
     else
         case $opt in
         1) clear;
-        option_picked "Launched Browser with Manual";
+        option_picked "Launched Browser with Help Manual";
     firefox https://www.linuxliteos.com/manual/install.html#updates &
     show_menu;
         ;;
@@ -50,7 +52,7 @@ while [ opt != '' ]
         2) clear;
             option_picked "Installation Selected";
               if [ -z "(grep -w pae /proc/cpuinfo)" ]; then
-                     echo "You can not install the PAE Kernel as your processor flags apear not to support it."; 
+                     echo "You cannot install the PAE Kernel as your processor appears not to support it."; 
                        else
                           sudo apt-get install linux-generic-pae linux-headers-generic-pae -y
                                 fi
@@ -73,7 +75,7 @@ while [ opt != '' ]
         ;;
 
         *)clear;
-        option_picked "You must chose a listed option, or press enter to exit.";
+        option_picked "You must choose a listed option, or press Enter to exit.";
         show_menu;
         ;;
     esac
