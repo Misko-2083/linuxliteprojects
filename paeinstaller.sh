@@ -1,6 +1,7 @@
 #!/bin/bash
 # Script to check for pae capability, and then to install a pae kernel.
-# Author: John 'ShaggyTwoDope' Jenkins
+# Author: John 'ShaggyTwoDope' Jenkins 
+# Credits: Jerry Bezencon The Cleaner and Editor , Stripe The Tester
 
 show_menu(){
     NORMAL=`echo "\033[m"`
@@ -47,8 +48,6 @@ while [ opt != '' ]
     show_menu;
         ;;
 
-
-
         2) clear;
             option_picked "Installation Selected";
               if [ -z "(grep -w pae /proc/cpuinfo)" ]; then
@@ -56,11 +55,8 @@ while [ opt != '' ]
                        else
                           sudo apt-get install linux-generic-pae linux-headers-generic-pae -y
                                 fi
-
-            
             show_menu;
             ;;
-
 
         3) clear;
             option_picked "Reboot Selected";
