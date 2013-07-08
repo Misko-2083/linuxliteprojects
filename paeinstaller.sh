@@ -7,7 +7,8 @@ show_menu(){
     FGRED=`echo "\033[41m"`
     RED_TEXT=`echo "\033[31m"`
     ENTER_LINE=`echo "\033[33m"`
-    CHECKPAE=$(if [ -z "(grep -w pae /proc/cpuinfo)" ]; then
+    CHECKPAE=$(
+    if [ -z "(grep -w pae /proc/cpuinfo)" ]; then
      echo "${RED_TEXT}Your Processor is NOT PAE Capable, Please Press enter to exit."; 
                                 else
      echo "${MENU}Your Processor is PAE Capable, You can procede with installing.${NORMAL}";
