@@ -14,7 +14,7 @@ show_menu(){
     if [ -z "(grep -w pae /proc/cpuinfo)" ]; then
      echo "${RED_TEXT}Your Processor is NOT PAE capable, please press Enter to exit."; 
                                 else
-     echo "${MENU}Your Processor is PAE capable, you can procede with installation.${NORMAL}";
+     echo "${MENU}Your Processor is PAE capable, you can proceed with installation.${NORMAL}";
                               fi
       )
 
