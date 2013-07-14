@@ -6,7 +6,7 @@
 show_menu(){
     NORMAL=`tput sgr0`
     MENU=`tput sgr0`
-    NUMBER=`echo "\033[33m"` #yellow
+    BOLD=`tput bold`
     FGRED=`echo "\033[41m"`
     RED_TEXT=`echo "\033[31m"`
     ENTER_LINE=`echo "\033[33m"`
@@ -17,13 +17,16 @@ show_menu(){
      echo "${MENU}Your Processor is PAE capable, you can procede with installation.${NORMAL}";
                               fi
       )
+
     echo -e "${CHECKPAE}"
+    echo -e "${BOLD}**************************************************"
+    echo -e "Linux Lite - PAE Kernel Installer"
     echo -e "${MENU}**************************************************${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 1)${MENU} Read More (This will launch the Help Manual) ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 2)${MENU} Install the PAE Kernel ${NORMAL}"
-    echo -e "${MENU}**${NUMBER} 3)${MENU} Reboot into the new kernel ${NORMAL}"
+    echo -e "${MENU}** 1)${MENU} Read More (This will launch the Help Manual) ${NORMAL}"
+    echo -e "${MENU}** 2)${MENU} Install the PAE Kernel ${NORMAL}"
+    echo -e "${MENU}** 3)${MENU} Reboot into the new kernel ${NORMAL}"
     echo -e "${MENU}**************************************************${NORMAL}"
-    echo -e "${ENTER_LINE}Please choose a menu option then press Enter or press ${RED_TEXT}Enter now to exit.${NORMAL}"
+    echo -e "${MENU}Please choose a menu option then press Enter or press ${RED_TEXT}Enter now to exit.${NORMAL}"
     read opt
 }
 
