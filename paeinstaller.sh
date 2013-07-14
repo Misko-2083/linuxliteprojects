@@ -25,7 +25,7 @@ show_menu(){
     echo -e "${MENU}** 2) Install the PAE Kernel"
     echo -e "${MENU}** 3) Reboot into the new kernel"
     echo -e "${MENU}**************************************************"
-    echo -e "${MENU}Please choose a menu option then press Enter or press ${RED_TEXT}Enter now to exit."
+    echo -e "${MENU}Please choose a menu option then press Enter or press ${RED_TEXT}Enter now to exit.${MENU}"
     read opt
 }
 
