@@ -4,8 +4,8 @@
 # Credits: Jerry Bezencon The Cleaner and Editor , Stripe The Tester
 
 show_menu(){
-    NORMAL=`echo "\033[m"`
-    MENU=`echo "\033[36m"` #Blue
+    NORMAL=`tput sgr0`
+    MENU=`tput sgr0`
     NUMBER=`echo "\033[33m"` #yellow
     FGRED=`echo "\033[41m"`
     RED_TEXT=`echo "\033[31m"`
