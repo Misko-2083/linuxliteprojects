@@ -19,7 +19,7 @@ show_menu(){
 
     echo -e "${CHECKPAE}"
     echo -e "${BOLD}**************************************************"
-    echo -e "Linux Lite - PAE Kernel Installer"
+    echo -e "${BOLD}Linux Lite - PAE Kernel Installer"
     echo -e "${BOLD}**************************************************"
     echo -e "${MENU}** 1) Read More (This will launch the Help Manual)"
     echo -e "${MENU}** 2) Install the PAE Kernel"
