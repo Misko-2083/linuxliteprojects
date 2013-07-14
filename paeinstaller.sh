@@ -4,7 +4,6 @@
 # Credits: Jerry Bezencon The Cleaner and Editor , Stripe The Tester
 
 show_menu(){
-    NORMAL=`tput sgr0`
     MENU=`tput sgr0`
     BOLD=`tput bold`
     FGRED=`echo "\033[41m"`
@@ -14,19 +13,19 @@ show_menu(){
     if [ -z "(grep -w pae /proc/cpuinfo)" ]; then
      echo "${RED_TEXT}Your Processor is NOT PAE capable, please press Enter to exit."; 
                                 else
-     echo "${MENU}Your Processor is PAE capable, you can proceed with installation.${NORMAL}";
+     echo "${MENU}Your Processor is PAE capable, you can proceed with installation.";
                               fi
       )
 
     echo -e "${CHECKPAE}"
     echo -e "${BOLD}**************************************************"
     echo -e "Linux Lite - PAE Kernel Installer"
-    echo -e "${BOLD}**************************************************${NORMAL}"
-    echo -e "${MENU}** 1)${MENU} Read More (This will launch the Help Manual) ${NORMAL}"
-    echo -e "${MENU}** 2)${MENU} Install the PAE Kernel ${NORMAL}"
-    echo -e "${MENU}** 3)${MENU} Reboot into the new kernel ${NORMAL}"
-    echo -e "${MENU}**************************************************${NORMAL}"
-    echo -e "${MENU}Please choose a menu option then press Enter or press ${RED_TEXT}Enter now to exit.${NORMAL}"
+    echo -e "${BOLD}**************************************************"
+    echo -e "${MENU}** 1) Read More (This will launch the Help Manual)"
+    echo -e "${MENU}** 2) Install the PAE Kernel"
+    echo -e "${MENU}** 3) Reboot into the new kernel"
+    echo -e "${MENU}**************************************************"
+    echo -e "${MENU}Please choose a menu option then press Enter or press ${RED_TEXT}Enter now to exit."
     read opt
 }
 
