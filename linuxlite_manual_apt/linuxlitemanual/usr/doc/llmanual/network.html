@@ -1,0 +1,487 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Linux Lite | Network</title>
+</head>
+
+<body>
+    <div id="page">
+		
+        <div id="header">
+        	<h1><a name="top"></a>Linux Lite Manual</h1>
+            <ul>
+           	<li><a href="index.html">Home</a></li>
+               	<li><a href="install.html">Install Guide</a></li>
+                <li><a href="network.html">Network</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="hardware.html">Hardware</a></li>
+            </ul>
+        </div>
+  
+        <div id="main">
+        
+        	<div class="main_top">
+            	<h1>Network Connections &amp; Network Shares</h1>
+            </div>
+            
+           	<div class="main_body">
+                <p><b><font size="4">Network Connections:<br>
+				<br>
+				</font></b><a href="#wireless">Wireless Connections</a><br>
+				<a href="#usbmodem">USB Broadband Modem</a><br />
+				<a href="#nas">Accessing a NAS device</a><br>
+				<a href="#shares">Network Shares</a><br>
+				<a href="#wintolin">Accessing you Linux Lite Shares from Windows</a><br>
+				<a href="#lintowin">Accessing you Windows Shares from Linux Lite</a><br>
+				<a href="#timezone">Changing your timezone</a></p>
+				<p><b><font size="4">Connecting to the Internet with Wired</font></b></p>
+				<p>For the most part, you shouldn&#39;t have to configure anything 
+				in <b>Network Connections</b> if you are connected to your 
+				router with an ethernet cable. Your router is most likely 
+				already set up to give you an IP address automatically. So in 
+				this tutorial we will instead focus on connecting to your router 
+				with a static IP address.</p>
+				<p>Make sure <b>Enable Networking </b>has a tick beside it. The 
+				first step is to right click on the network tray icon and select
+				<b>Edit Connections</b>. You may be asked for your password 
+				before you go to change any of your <b>Network Connection</b> 
+				settings.</p>
+				<p><img border="0" src="img/network/wired1.png"></p>
+				<p>A box will pop up with a number of tabs across the top, make 
+				sure to select the <b>Wired</b> tab.</p>
+				<p><img border="0" src="img/network/wired2.png"></p>
+				<p>Click on the <b>Add</b> button and a new box will pop up.</p>
+				<p><img border="0" src="img/network/wired3.png"></p>
+				<p>Select the <b>IPv4 Settings</b> tab and then select <b>Manual</b> 
+				from the <b>Method</b> drop down.</p>
+				<p><img border="0" src="img/network/wired4.png"></p>
+				<p>Now click on the <b>Add</b> button, click into the first 
+				field - <b>Address</b> and populate it with the relevant IP 
+				details from your network (see your Router Manual for details) 
+				this will vary from brand to brand of router. Continue to 
+				populate the remaining <b>Netmask</b> and <b>Gateway</b> fields 
+				with the relevant IP details from your network.</p>
+				<p><b>Address</b> - The IP address you will give to your Linux 
+				Lite computer (refer to your router manual for the exact 
+				details)<br>
+				<b>Netmask</b> - Nearly always <b>255.255.255.0</b> (refer to 
+				your router manual for the exact details)<br>
+				<b>Gateway</b> - This is the IP address of your router (refer to 
+				your router manual for the exact details)</p>
+				<p><img border="0" src="img/network/wired5.png"></p>
+				<p>Once you have entered all the IP details, click on <b>Save</b> 
+				and then <b>Close</b> on the final box.</p>
+				<p><img border="0" src="img/network/wired6.png"></p>
+				<p>
+				<a href="#top">Top of page</a><br>
+				</p><hr>
+				<p>&nbsp;</p>
+				<a name="wireless"></a><p><b><font size="4">Connecting to the Internet with Wireless</font></b></p>
+				<p>In the system tray (near the clock, bottom right hand side of 
+				your screen) if you have no connection at the moment you will 
+				see a diagonal broken line with a red cross next to it. This denotes 
+				that there is no connection currently. Left click on the icon, 
+				if your wireless is working, you should have a list of wireless 
+				networks in your area, select your network. If you cannot see 
+				any wireless networks at all, your wireless device driver may 
+				not be installed, or for example your wireless switch on your 
+				laptop is in the Off position. If after you have checked this 
+				there are still no wireless networks showing, go to <b>Menu, Settings, 
+				Install Drivers</b> and see if your wireless device is listed. 
+				If it is, install the driver for it and continue with this 
+				tutorial.</p>
+				<p>
+				<img border="0" src="img/network/wireless-1.png"></p>
+				<p>A box will pop up asking for your wireless password. If you 
+				would like to view your password while you type it, tick the &#39;<b>Show 
+				password</b>&#39; box to ensure that you have entered your wireless 
+				password correctly.</p>
+				<p>
+				<img border="0" src="img/network/wireless-2.png"></p>
+				<p>After a successful connection, you should see a tray icon 
+				like the one shown below with 4 bars in total. The signal strength is 
+				displayed by the number of bars. The more bars in bold, the stronger the 
+				signal. In this example we are connected with 3 out of the 4 
+				bars.</p>
+				<p>
+				<img border="0" src="img/network/wireless-3.png"></p>
+				<p>
+				<a href="#top">Top of page</a></p><hr>
+				<p>&nbsp;</p>
+				<p><b><font size="4"><a name="nas"></a>Accessing a NAS device</font></b></p>
+				<p>Many homes now use a NAS or Network Attached Storage device.<br />
+				In this tutorial we'll show you how to access all your media 
+				files, then show you how to play them across your network with 
+				VLC.<br />
+				When this set up is complete, you'll also be able to copy and 
+				paste files between your NAS and your pc just like you did in 
+				Windows or Mac.</p>
+				<p>First thing you need to do is find the IP address of your 
+				NAS. You may know this already or your NAS manual will show you 
+				how to find this. Once you have your NAS's IP address, open up 
+				your home folder and type in the following:</p>
+				<p><strong>smb://192.168.0.5</strong> where 192.168.0.5 is your 
+				NAS's IP address.</p>
+				<p>
+				<img height="460" src="img/network/nas/nas1.png" width="711" /></p>
+				<p>Put in the username of the NAS, in most cases it is <strong>
+				admin</strong>, but again refer to your manual for the correct 
+				information.<br />
+				Put in the workgroup (<strong>Domain</strong>) name, and finally 
+				the password for your NAS. Place a dot in <strong>Remember 
+				forever</strong> if you want it to save your details.</p>
+				<p>
+				<img height="458" src="img/network/nas/nas2.png" width="709" /></p>
+				<p>You should now see all of your NAS folders.</p>
+				<p>
+				<img height="460" src="img/network/nas/nas3.png" width="711" /></p>
+				<p>Lets look inside the <strong>Movies</strong> folder for this device, as you 
+				can see I have a movie file in there called <strong>The Code 
+				Linux Historical Documentary.mp4</strong></p>
+				<p>
+				<img height="460" src="img/network/nas/nas4.png" width="711" /></p>
+				<p>Before we can start playing media files across the network, 
+				we need to set up VLC so that it can access and play files 
+				remotely.<br />
+				In Linux Lite, click on <strong>Menu, Multimedia, VLC Media 
+				Player</strong>. With VLC open, click on <strong>Tools, 
+				Preferences</strong>.</p>
+				<p>
+				<img height="356" src="img/network/nas/nas5.png" width="443" /></p>
+				<p>In the window that pops up, in the bottom left click on <strong>
+				All</strong>. Then on the left, expand <strong>Input / Codecs, 
+				Access modules, SMB</strong>. Then put in your NAS's username, 
+				password and finally the <strong>SMB domain</strong> 
+				(Workgroup). Click on <strong>Save</strong> to finish and close 
+				VLC.</p>
+				<p>
+				<img height="545" src="img/network/nas/nas6.png" width="684" /></p>
+				<p>Now that we've given VLC the network credentials it needs to 
+				access your NAS, we can browse and play our files.</p>
+				<p>
+				<img height="458" src="img/network/nas/nas7.png" width="784" /></p>
+				<p>
+				<a href="#top">Top of page</a></p>
+				<hr>
+				<p>&nbsp;</p>
+				<p><b><font size="4"><a name="usbmodem"></a>USB Broadband Modem</font></b></p>
+				<p>If you have the <b>Huawei E220</b> then this should work out of the 
+				box. This is a very common modem and we encourage you to use 
+				this model if it is possible.<br>
+				<br>
+				Right click on the Network Connections tray icon and select <b>New 
+				Mobile Broadband</b> connection.<br>
+				Configure your settings according to the details from your 3g service provider.</p>
+				<p><img border="0" src="img/network/usbmodem1.png"></p>
+				<p><br>
+				If you need more help, please view this forum thread
+				<a target="_blank" href="https://www.linuxdistrocommunity.com/forums/showthread.php?tid=972">
+				here</a>.</p>
+				<p>At this stage no other modems have been tested.</p>
+				<p>
+				<a href="#top">Top of page</a></p>
+				<hr>
+				<p>
+				&nbsp;</p>
+				<a name="shares"></a><p><b><font size="4">Network Shares: Menu, 
+				System, Network Share Settings</font></b></p>
+				<p>Assuming you have already set up shares on your Windows 
+				computer, please read through the following guide.<br>
+				Accessing shares between Linux and Windows computers 
+				historically has been difficult, it doesn&#39;t always work out. In 
+				this tutorial we hope to make the process a little easier for 
+				you. First step, we 
+				need to set up your Linux Lite shares.</p>
+				<p><a name="folder">Create</a> a folder in your home folder and place into it files 
+				that you want to share with your Windows computer.</p>
+				<p>Right click on your home folder, <b>Create Folder</b>. Now 
+				give your new folder a name, in this example we&#39;ll use the name &#39;<b>share</b>&#39;.</p>
+				<p>Next we need to tell Windows who we are going to login as 
+				to access our Linux Lite shares.<br>
+				<a name="usersetup">Open</a> up a terminal and type:</p>
+				<table border="0" width="800" id="table6" bgcolor="#FFFF55">
+					<tr>
+						<td>sudo smbpasswd -a <b>name</b></td>
+					</tr>
+				</table>
+				<p><br>
+				where <b>name</b> is your Linux Lite username.<br>
+				After that, you&#39;ll be asked to enter your Linux Lite password 
+				twice.</p>
+				<p>Now, in the same terminal do:</p>
+				<table border="0" width="800" id="table7" bgcolor="#FFFF55">
+					<tr>
+						<td>sudo leafpad /etc/samba/smbusers</td>
+					</tr>
+				</table>
+				<p><br>
+				where you see:</p>
+				<table border="0" width="800" id="table8" bgcolor="#FFFF55">
+					<tr>
+						<td>&lt;name&gt; = “&lt;name&gt;”</td>
+					</tr>
+				</table>
+				<p><br>
+				replace <b>name</b> with your Linux Lite username in each of the 
+				brackets, eg.</p>
+				<table border="0" width="800" id="table9" bgcolor="#FFFF55">
+					<tr>
+						<td>&lt;jerry&gt; = “&lt;jerry&gt;”</td>
+					</tr>
+				</table>
+				<p><br>
+				<b>Save</b> and <b>Close</b> the file, and close the terminal. 
+				You will only ever need to do this part <b>once</b>.</p>
+				<p>Now click on <b>Menu, System, Network Share Settings, Edit 
+				Network Shares</b>, and 
+				follow very carefully the onscreen instructions. Do not miss any 
+				steps and take your time. A text editor will pop up with content 
+				similar to that of the example below. Only change the text that 
+				is in <b>bold</b>.</p>
+				<table border="0" width="800" id="table1" bgcolor="#FFFF55">
+					<tr>
+						<td>#======================= Global Settings 
+						====================================<br>
+						[global]<br>
+						workgroup = <b>WORKGROUP</b><br>
+						server string = Linux Lite Shares<br>
+						netbios name = <b>lappy</b><br>
+						security = user<br>
+						encrypt passwords = true<br>
+						username map = /etc/samba/smbusers<br>
+						map to guest = bad user<br>
+						guest account = nobody<br>
+						dns proxy = no<br>
+						#======================= Share Definitions 
+						===================================<br>
+						[linuxliteshare]<br>
+						path = /home/%U/<b>share</b><br>
+						available = yes<br>
+						valid users = %U %G<br>
+						write list = %U<br>
+						browsable = yes<br>
+						public = no<br>
+						writable = yes<br>
+						guest ok = no<br>
+						read only = no<br>
+						printable = no<br>
+						locking = no<br>
+						strict locking = no</td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<p><b>There is no need to change any of the other settings. 
+				Doing so may cause the shares not to work.<br>
+				</b>You only need to change:</p>
+				<table border="0" width="800" id="table3" bgcolor="#FFFF55">
+					<tr>
+						<td><b>WORKGROUP</b> - must equal the workgroup name on 
+						the Windows machine.<br>
+						<br>
+						<b>netbios name</b> is the name of the Linux Lite 
+						computer, eg. in a terminal where you see,<br>
+						<br>
+						<b>jerry@lappy:~$</b><br>
+						<br>
+						<b>lappy</b> is the <b>netbios name</b>.<br>
+						<br>
+						<b>path =</b> the path to your share folder on Linux 
+						Lite that we want Windows to see, <b>ONLY</b> change the 
+						last name eg. /home/%U/<b>share<br>
+						share </b>is the name of the folder on Linux Lite you 
+						are sharing in your home folder. %U is the same as your 
+						username, leave the %U as it is. Now change <b>ONLY</b> 
+						the word <b>share</b> to the name of the folder you 
+						created in the <a href="#folder">first step of this tutorial</a>.</td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<p>Save and Close the file.<br>
+				<br>
+				Now that everything is set up, click on <b>Menu, System, Network 
+				Share Settings, Restart Network Share Services</b>.</p>
+				<table border="0" width="800" id="table4" bgcolor="#FFFF55">
+					<tr>
+						<td><b>NOTE: Anytime that you modify your share settings 
+						you must click on Restart Network Share Services for the 
+						changes to apply.</b></td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<p>If at any stage you want to add more share folders, you can 
+				simply add more blocks like in the example below:</p>
+				<table border="0" width="800" id="table5" bgcolor="#FFFF55">
+					<tr>
+						<td>#======================= Global Settings 
+						====================================<br>
+						[global]<br>
+						workgroup = WORKGROUP<br>
+						server string = Linux Lite Shares<br>
+						netbios name = lappy<br>
+						security = user<br>
+						encrypt passwords = true<br>
+						username map = /etc/samba/smbusers<br>
+						map to guest = bad user<br>
+						guest account = nobody<br>
+						dns proxy = no<br>
+						#======================= Share Definitions 
+						===================================<br>
+						[linuxliteshare]<br>
+						path = /home/%U/share<br>
+						available = yes<br>
+						valid users = %U %G<br>
+						write list = %U<br>
+						browsable = yes<br>
+						public = no<br>
+						writable = yes<br>
+						guest ok = no<br>
+						read only = no<br>
+						printable = no<br>
+						locking = no<br>
+						strict locking = no<br>
+						<br>
+						[linuxliteshareVideos]<br>
+						path = /home/%U/Videos<br>
+						available = yes<br>
+						valid users = %U %G<br>
+						write list = %U<br>
+						browsable = yes<br>
+						public = no<br>
+						writable = yes<br>
+						guest ok = no<br>
+						read only = no<br>
+						printable = no<br>
+						locking = no<br>
+						strict locking = no<br>
+						<br>
+						[linuxliteshareDownloads]<br>
+						path = /home/%U/Downloads<br>
+						available = yes<br>
+						valid users = %U %G<br>
+						write list = %U<br>
+						browsable = yes<br>
+						public = no<br>
+						writable = yes<br>
+						guest ok = no<br>
+						read only = no<br>
+						printable = no<br>
+						locking = no<br>
+						strict locking = no</td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<p>Don&#39;t forget to do <b>Menu, System, Network 
+				Share Settings, Restart Network Share Services</b> to apply the 
+				new share settings.</p>
+				<p>
+				<a href="#top">Top of page</a></p><hr>
+				<p>&nbsp;</p>
+				<p><b><font size="4"><a name="wintolin"></a>Accessing you Linux Lite Shares from 
+				Windows</font></b></p>
+				<p>Go to your Windows machine, in this example we&#39;ll use Windows 
+				XP.</p>
+				<p>Click on <b>Start, Run</b> and type in the netbios name of 
+				your Linux Lite computer preceded by 2 backslashes:</p>
+				<p><b>eg. <a href="file://192.168.0.3">\\lappy</a></b></p>
+				<p>
+				<img border="0" src="img/network/access_ll3.png"></p>
+				<p>A username and password dialogue box will pop up, enter in 
+				the user and password we <a href="#usersetup">created earlier</a>.</p>
+				<p>
+				<img border="0" src="img/network/access_ll2.png"></p>
+				<p>And here we see our Linux Lite computer share folder:</p>
+				<p>
+				<img border="0" src="img/network/access_ll1a.png"></p>
+				<p>All that&#39;s left to do is to double click on the Linux Lite 
+				share and we will be inside the share folder. Now you can copy 
+				and paste files to your Linux Lite computer.</p>
+				<p>
+				<img border="0" src="img/network/access_ll1.png"></p>
+				<p>
+				<a href="#top">Top of page</a><br>
+				</p><hr>
+				<p>
+				&nbsp;</p>
+				<p><b><font size="4"><a name="lintowin"></a>Accessing your Windows shares from Linux 
+				Lite</font></b></p>
+				<p>Go to your Windows machine and find the ip address. To do 
+				this, open a command prompt and type in <b>ipconfig</b>.</p>
+				<p>
+				<img border="0" src="img/network/win_ipconfig.png"></p>
+				<p>Usually the results at the top has your ip address listed. In 
+				the above example, the ip address is: <b>192.168.0.8<br>
+				</b>Make a note of this ip address.</p>
+				<p>Now go back to your Linux Lite computer, and open your home 
+				folder.</p>
+				<table border="0" width="800" id="table2" bgcolor="#FFFF55">
+					<tr>
+						<td><b>NOTE: If by the end of this Shares tutorial you 
+						are still not seeing any shares, try restarting both 
+						machines.<br>
+						Also note that sometimes it can take a while before the shares appear.</b></td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<p>In the address bar, type in: <b>smb://ipaddressofwindowspc</b> 
+				where <b>ipaddressofwindowspc</b> is the actual numbered ip 
+				address of your Windows computer.</p>
+				<p>
+				<img border="0" src="img/network/smb_address_bar.png"></p>
+				<p>If everything went to plan, you should now be prompted for 
+				your Windows username, domain or workgroup and your Windows 
+				password.</p>
+				<p><b>Windows username - Windows workgroup name - Windows 
+				password</b></p>
+				<p>
+				<img border="0" src="img/network/smb_password.png"></p>
+				<p>Now you can copy and paste files to your Windows computer.</p>
+				<p>
+				<img border="0" src="img/network/smb_shares.png"></p>
+				<p>
+				<strong>NOTE:</strong> If the ip address method does not work 
+				eg. <b>smb://192.168.0.8</b> try <strong>smb://linuxlite</strong> 
+				where <strong>linuxlite</strong> is your netbios name.</p>
+				<p>
+				<b>NOTE: If you are still not having any luck with either method, 
+				try
+				<a target="_blank" href="http://quickmediasolutions.com/apps/14/nitroshare">
+				NitroShare</a>, a cross-platform network sharing application for 
+				Windows, Mac and Linux. You can view a video tutorial on it
+				<a target="_blank" href="http://www.youtube.com/watch?v=0QduAP4CxXI">
+				here</a>. Another method you could consider is setting up an FTP 
+				server on your Windows computer and connecting to it with 
+				Filezilla, available from Menu, <a href="software.html#software">
+				Install/Remove Software</a>.</b></p>
+				<p>
+				<a href="#top">Top of page</a></p><hr>
+				<p>&nbsp;</p>
+				<p><font size="4"><a name="timezone"></a><b>Changing your timezone</b></font></p>
+				<p>Open up a terminal and type:</p>
+				<table border="0" width="800" id="table10" bgcolor="#FFFF55">
+					<tr>
+						<td><b>sudo dpkg-reconfigure tzdata</b></td>
+					</tr>
+				</table>
+				<p><br>
+				Enter your password and use the arrows to select your timezone. When you have finished, 
+				tab to <b>&lt;Ok&gt;</b> and hit enter.</p>
+				<p><br>
+				<img border="0" src="img/network/timezone.png" width="659" height="432"><p><a href="#top">Top of page</a></div>
+            
+           	<div class="main_bottom"></div>
+</body>
+</html>
+
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: templates [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : The Slant
+Version    : 1.0
+Released   : 2009-07-25
+-->

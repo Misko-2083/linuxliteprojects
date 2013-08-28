@@ -1,0 +1,11 @@
+an/changelog
+debian/control
+debian/rules
+debian/compat
+/...
+
+#!/usr/bin/make -f
+%:
+   dh $@
+override_dh_install:
+    dh_install /usr/

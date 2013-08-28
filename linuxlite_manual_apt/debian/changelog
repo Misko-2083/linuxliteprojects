@@ -1,0 +1,8 @@
+PACKAGE (VERSION) UNRELEASED; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+  * New Updates (adds java information)
+  * New File Paths.
+  * Prep for release.
+
+ -- shaggy <twodopeshaggy@gmail.com>  Wed, 28 Aug 2013 00:51:35 -0700

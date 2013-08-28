@@ -1,0 +1,556 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="style.css" />
+<title>Linux Lite | Hardware</title>
+</head>
+
+<body>
+    <div id="page">
+		
+        <div id="header">
+        	<h1><a name="top"></a>Linux Lite Manual</h1>
+            <ul>
+           	<li><a href="index.html">Home</a></li>
+               	<li><a href="install.html">Install Guide</a></li>
+                <li><a href="network.html">Network</a></li>
+                <li><a href="software.html">Software</a></li>
+                <li><a href="hardware.html">Hardware</a></li>
+            </ul>
+        </div>
+  
+        <div id="main">
+        
+        	<div class="main_top">
+            	<h1>Hardware</h1>
+            </div>
+            
+           	<div class="main_body">
+                <p><a href="#graphics">Graphic Drivers And Setup</a><br>
+&nbsp;- <a href="#intel">Intel</a><br>
+&nbsp;- <a href="#ati">ATI</a><br>
+&nbsp;- <a href="#nvidia">NVIDIA</a><br>
+&nbsp;- <a href="#optimus">NVIDIA-Optimus</a><br>
+				<a href="#sound">Sound Configuration</a><br>
+				<a href="#printer"><a href="#printer">Printer Setup</a><br><!--<a href="#wirelessdev">Wireless Devices</a><br>-->
+				<a href="#keyboard">Keyboard Hotkeys and Multimedia Keys</a><br>
+				<a href="#booting">Booting issues</a><br><a href="#report">Create System Report tool</a><br>
+				<a href="#seekhelp">Finding help online</a></p>
+
+            	<!--<p><b><font size="5">Drivers</font></b></p>
+				<p><b><font size="4">Wireless</font></b></p>
+				<p>To be written.</p><hr>
+				<p>&nbsp;</p>-->
+                <p><b><font size="4">Hardware Database</font></b></p>
+				<p>Wondering if your laptop or desktop will work on Linux Lite?<br />
+				Check out our Hardware Database
+				<a href="https://www.linuxliteos.com/hardware.html" target="_blank">here</a> to see if your model is already listed. Don't forget 
+				you can also run Linux Lite live before you install it to see if 
+				your hardware is supported. This database feature is new so the 
+				list of computers at the moment is limited. If you already have 
+				Linux Lite installed, please consider adding your hardware to 
+				the
+				<a href="https://www.linuxliteos.com/hardware.html" target="_blank">Linux Lite Hardware Database</a> to help others.</p>
+				<p><b><font size="5"><a name="graphics"></a>Graphics Drivers and Setup</font></b></p>
+				<p><b><font size="4"><a name="intel"></a>Graphics - Intel</font></b></p>
+				<p>The following is an independently maintained PPA by Stefan 
+				Glasenhardt. As such you should research first and then decide if you 
+				want to use this PPA. The standard installed Ubuntu Intel drivers work 
+				fine, by using this PPA, you may gain a little more performance and 
+				better framerates.<br />
+				<br />
+				A word from Stefan:</p>
+				<p><em><strong>This only supports Intel i810 chipset and up. 
+				Others such as GMA 500 … are not supported. And also remember 
+				that, these are ‘hot’ updates and might contain bugs, so please 
+				use it at your own risk.</strong></em></p>
+				<p>More information here:
+				<a href="https://launchpad.net/~glasen/+archive/intel-driver" target="_blank">
+				https://launchpad.net/~glasen/+archive/intel-driver</a> </p>
+				<p>To install these drivers, open up a terminal and type:&nbsp;</p>
+				<table border="0" width="800" id="table2" bgcolor="#FFFF55">
+					<tr>
+						<td><strong>sudo apt-add-repository 
+						ppa:glasen/intel-driver<br />
+						sudo apt-get update<br />
+						sudo apt-get install xserver-xorg-video-intel&nbsp;</strong></td>
+					</tr>
+				</table>
+				<p>
+				</p>
+				<p>
+				Then restart your computer.</p>
+				<p>
+				<a href="#top">Top of page</a></p><hr>
+				<p>&nbsp;</p>
+				<p><b><font size="4"><a name="ati"></a>Graphics - ATI</font></b></p>
+				<p>If you&#39;re not sure whether or not you have ATI graphics, open 
+				up a terminal and run this command:</p>
+				<p><b>sudo lshw -C display</b></p>
+				<p><img border="0" src="img/hardware/ati1.png"></p>
+				<p>You can see that under product: there is a reference to 
+				<b>Radeon</b>, a brand of <b>ATI</b>.<br>
+				<br>
+				<b>NOTE: You must be connected to the internet before you start 
+				the driver install.</b></p>
+				<p>The next step is to go to <b>Menu, System, Install Drivers</b>.</p>
+				<p><img border="0" src="img/hardware/ati2.png"></p>
+				<p>You will be asked to enter your password.</p>
+				<p><img border="0" src="img/hardware/ati3.png"></p>
+				<p>The program will then scan your computer for any drivers that 
+				you may need.</p>
+				<p><img border="0" src="img/hardware/nvidia5.png"></p>
+				<p>When it has finished scanning, you will see a dialog box 
+				similar to the one below.</p>
+				<p><img border="0" src="img/hardware/ati5.png"></p>
+				<p>For ATI, we would select: <b>ATI/AMD proprietary FGLRX 
+				graphics driver </b>(second in the list in the above picture)<br>
+				If you plan to play Steam games in the future, select: <b>
+				ATI/AMD proprietary FGLRX graphics driver (**experimental** 
+				beta)</b> Now click on <b>Activate</b>.<br />
+				<br> You will see this dialog as it downloads and installs:<br></p>
+				<p><img border="0" src="img/hardware/nvidia4.png"></p>
+
+				<p>When the driver has finished, click on <b>Close</b>.<br>
+				Now open up a terminal and type:<br>
+				<br>
+				<b>sudo aticonfig --initial -f<br>
+				<br>
+				</b>enter your password, when it has finished, restart your 
+				computer.</p>
+				<p>Now we need to make sure that our new <b>Menu</b> entries 
+				launch correctly. Go to <b>Menu, Settings, Main Menu</b>.</p>
+				<p><img border="0" src="img/hardware/ati6.png"></p>
+				<p>A new window will pop up, select <b>Settings</b> on the left 
+				then the first AMD menu entry on the right and click on <b>
+				Properties</b>.<br>
+				This will bring up a new window, edit each field so that it 
+				looks the same as in the picture below. When you have finished 
+				editing, click on <b>Save </b>on the<b> Edit launcher </b>
+				window.</p>
+				<p><img border="0" src="img/hardware/ati7.png"></p>
+				<p>Now click on the second AMD menu entry on the right and click 
+				on <b>Properties</b>.<br>
+				This will bring up a new window, edit each field so that it 
+				looks the same as in the picture below. When you have finished 
+				editing, click on <b>Save </b>on the<b> Edit launcher </b>
+				window. Now click on <b>Close</b> on the <b>Main Menu</b> 
+				window.</p>
+				<p><img border="0" src="img/hardware/ati8.png"></p>
+				<p>The <b>AMD Catalyst</b> menu item will let you configure your 
+				graphics, with limited access in the <b>Catalyst Control Center</b>.</p>
+				<p><img border="0" src="img/hardware/ati9.png"></p>
+				<p>The <b>AMD Catalyst Admin</b> will give you full access to 
+				all the settings in the <b>Catalyst Control Center</b> including 
+				options like&nbsp; <b>Switchable Graphics</b> if you have it. 
+				You will need to enter your password to access this control 
+				panel.</p>
+				<p><img border="0" src="img/hardware/ati10.png"></p>
+				<p>
+<a href="#top">Top of page</a><br>
+				</p><hr>
+				<p>&nbsp;</p>
+				<p><b><font size="4"><a name="nvidia"></a>Graphics - NVIDIA</font></b></p>
+				<p>If you&#39;re not sure if your graphics card is Nvidia or not, open 
+				up a terminal and run this command:</p>
+				<p><b>sudo lshw -C display</b></p>
+				<p><img border="0" src="img/hardware/nvidia1.png"></p>
+				<p>You see under <b>product:</b> <b>Nvidia</b> or <b>GeForce</b> (and similar naming schemes for Nvidia cards) depending on your card. The 
+				<b>vendor:</b> line may also show you the Product or Company name.</p>
+<p>
+				<b>NOTE: You must be connected to the internet before you start 
+				the driver install.</b></p>
+				<p>The next step is to go to <b>Menu, System, Install Drivers</b>.</p>
+				<p><img border="0" src="img/hardware/ati2.png"></p>
+				<p>You will be asked to enter your password.</p>
+				<p><img border="0" src="img/hardware/ati3.png"></p>
+				<p>The program will then scan your computer for any drivers that 
+				you may need.</p>
+				<p><img border="0" src="img/hardware/nvidia5.png"></p>
+				<p>When it has finished scanning, you will see a dialogue box 
+				similar to the one below.</p>
+				<p><img border="0" src="img/hardware/nvidia2.png"></p>
+				<p>Generally you will want to run the current Nvidia Driver, to do so you will select:<br>
+				<b> NVIDIA accelerated graphics driver (version current) [Recommended] </b>(forth in the list 
+				in the above picture)<br>
+				<br>
+				If you plan to play Steam games in the future or have an extremely new Nvidia card, select:<br>
+				<b>
+				NVIDIA accelerated graphics driver (**experimental** beta) (version experimental-304)</b> (sixth in the list 
+				in the example) Now click on <b>Activate</b>.</p>
+				<p><img border="0" src="img/hardware/nvidia3.png"><br>
+				<br> You will see this dialog as it downloads and installs:<br></p>
+				<p><img border="0" src="img/hardware/nvidia4.png"></p>
+				<p>When the driver has finished, click on <b>Close</b>.<br>
+				Now open up a terminal and type:<br>
+				<br>
+				<b>sudo nvidia-xconfig<br>
+				<br>
+				</b>Enter your password, when it has finished, restart your 
+				computer.</p>
+				<p><img border="0" src="img/hardware/nvidia9.png"></p>
+
+
+				<p>Now head over to <b>Menu, Settings, NVIDIA X Server Settings</b>.</p>
+				<p><img border="0" src="img/hardware/nvidia11.png"></p>
+
+
+				<p>Once you open Nvidia Settings you will be brought to a window similar to this one. It's best to allow the resolution to be set 
+				to auto for most monitors, however you can adjust it manually using the drop down menu <b>Resolution</b>. </p>
+				<p><img border="0" src="img/hardware/nvidia8.png"></p>
+<p>Any changes you make will need to be saved by clicking on <b>Save to X Configuration File</b> (you will be prompted for your password to write the xconfig 
+file), Then click on <b>Quit</b> to exit the settings window. Any adjustments should be automatic. Remember to test settings with <b>apply</b> before saving settings and exiting.</p>
+				<p><img border="0" src="img/hardware/nvidia7.png"></p>
+
+
+
+
+				<p>
+<a href="#top">Top of page</a> </p><hr>
+				<p>&nbsp;</p>
+				<p><b><font size="4"><a name="optimus"></a>Graphics - NVIDIA-Optimus</font></b></p>
+				<p>From a fresh install of Linux Lite 1.0.6, open up a terminal and 
+				type:</p>
+				<table border="0" width="800" id="table1" bgcolor="#FFFF55">
+					<tr>
+						<td><b>sudo add-apt-repository ppa:bumblebee/stable<br>
+						sudo apt-get update<br>
+						sudo apt-get install bumblebee virtualgl 
+						linux-headers-generic</b></td>
+					</tr>
+				</table>
+				<p><br>
+				Now restart your computer.</p>
+				<p>
+<a href="#top">Top of page</a></p>
+				<hr>
+				<p>&nbsp;</p>
+                <p><font size="4"><b><a name="sound"></a>Sound Configuration</b></font></p>
+
+<p>
+1. The audio icon can be found in the lower right hand corner, commonly referred to as the system tray.<br>
+<br>
+<img border="0" src="img/hardware/icons.png"><br>
+<br>
+2.  Hovering over the icon will show you the volume currently set. If you left click it, 
+it will toggle mute and unmute for the <b>Master</b> volume. Volume can also be adjusted up and down my using your mouse scroll wheel whilst hovering over the icon. Scrolling up brings the master volume up, and down accordingly.
+<br>
+<br>
+<img border="0" src="img/hardware/audio2.png"><br>
+<br>
+3. Right clicking on the sound icon will bring you a menu with a few options, you can select 
+<b>Properties</b> to adjust a few options.<br>
+<br>
+<img border="0" src="img/hardware/audio3.png"><br>
+<br>
+4. You can select <b>Sound card, Mixer</b>, and what command the left click uses. 
+Generally you will not need to adjust any of the settings aside from selecting 
+<b>Sound card</b>.<br>
+<br>
+<img border="0" src="img/hardware/audio4.png"><br>
+</p>
+
+<p>
+5. If you&#39;re unable to hear any sound, or you just want to check and adjust settings, 
+you would need to open the audio settings with <b>PulseAudio Volume Control</b>.<br>
+<br>
+Navigate to the <b>Menu</b>, <b>Multimedia</b>, <b>PulseAudio Volume Control</b><br>
+<br>
+<img border="0" src="img/hardware/audio10.png"><br>
+<br>
+6. You will be brought to a window similar to this one. On the tabs you will see <b>Playback</b>, for adjusting the volume of programs currently playing or capable of playback. <b>Recording</b> for programs currently using recording devices, namely your microphone. <b>Output Devices</b> is for main configuration of sound levels across your system. <b>Configuration</b> 
+is used for selecting profiles and misc settings.<br>
+<br>
+<img border="0" src="img/hardware/audio11.png"><br>
+<br>
+7. In the window above you can adjust volume settings for output. Using the blue sliding bars. You can toggle mute with the speaker icon <img border="0" src="img/hardware/audio19.png"> It will change it's background color when active <img border="0" src="img/hardware/audio18.png">. You can lock channels using <img border="0" src="img/hardware/audio20.png"> 
+so that when volume is raised or lowered it is done 
+equally. Or you can toggle and set the volume to be louder on one side. The <img border="0" src="img/hardware/audio21.png"> icon is used to specify the default device used by 
+PulseAudio. <br>
+<br>
+8. <b>Input Devices</b>, this includes microphones and other line-in devices, such as TV tuner cards with line in. Adjusting the levels and settings are the same method as described above in section 7.<br>
+<br>
+<img border="0" src="img/hardware/audio12.png"><br>
+
+<br>
+9. <b>Configuration</b>, this lists known profiles for your sound card. In most cases there is no need to select anything here unless you intend to disable your sound completely, or have a unique profile setting, 
+such as surround sound, mono, or 
+stereo out.<br>
+<br>
+<img border="0" src="img/hardware/audio13.png"><br>
+
+<br>
+10. <b>Recording</b>, will list programs currently using an input method, be it line-in or a microphone. You can toggle access per program and 
+or adjust volume per program here. The method used is the same as mentioned in section 7.<br>
+<br>
+<img border="0" src="img/hardware/audio15.png"><br>
+<br>
+11. <b>Playback</b>, will list programs currently producing audio or able to. You can toggle access per program and 
+or adjust volume per program here. The method used is the same as mentioned in section 7.<br>
+<br>
+<img border="0" src="img/hardware/audio14.png"><br>
+<br>
+12. <b>Notes</b>: Being able to toggle on mute and unmute on multiple things can cause issues. And at times the device may be muted upon install. Show caution here as you may mute a certain program and forget about it entirely. If unmuting and adjusting settings for your sound card and related programs do not work at all, there may be a driver issue. Refer below for resources on how to remedy this. You can find help by using the <b><a href="#report">Create System Report tool</a></b> 
+and using the directions to upload the generated report to the Forums.<br>
+
+
+<p><b>Resources for Audio Drivers</b></p>
+<p>
+<a target="_blank" href="https://help.ubuntu.com/community/Sound">Ubuntu Wiki</a> 
+Contains a list of guides for configuring specific drivers for older and odd sets of sound cards.<br>
+<a target="_blank" href="https://help.ubuntu.com/community/SoundTroubleshooting">Ubuntu Wiki</a> Contains steps to help trouble shoot and configure sound cards.<br>
+<a target="_blank" href="http://www.halfgaar.net/surround-sound-in-linux">Halfgaar</a> Has a great guide to setting up surround sound under linux.<br>
+<a target="_blank" href="http://alexsleat.co.uk/2011/12/03/setting-up-surround-sound-in-linux/">
+More surround sound help from here</a>.</p>
+				<p>
+<a href="#top">Top of page</a></p><hr>
+				<p>
+<br>
+
+
+
+</p>
+
+
+                <p><font size="4"><b><a name="printer"></a>Printer Setup</b></font></p>
+<p>
+
+1. Plugging in a printer will prompt a dialog if detected and attempt to find a matching driver. (If your driver was 
+plugged in during your initial install you may not see a prompt, you may refer to step 3 below.)<br>
+<br>
+<img border="0" src="img/hardware/printer1.png"><br>
+<br>
+2. If a printer and driver has been detected you will see this dialog. (Note, the dialog should appear in 
+upper right of your screen)<br>
+<br>
+<img border="0" src="img/hardware/printer2.png"><br>
+<br>
+3. You can further configure or manage printing jobs or printers by going to printing located in 
+<b>Menu, System, Printing</b>.<br>
+<br>
+<img border="0" src="img/hardware/printer3.png"><br> 
+<br>
+4. Once you open the <b>Printing</b> menu it will bring you to a simple dialog to select, view and manage options related to your printer.<br>
+<br>
+<img border="0" src="img/hardware/printer4.png"><br>
+<br>
+5. You can find options for a printer by highlighting (single clicking) on the icon of the printer you wish to manage.<br>
+<br> 
+<img border="0" src="img/hardware/printer7.png"><br> 
+<br>
+6. If a printer if not listed in the window after opening it you will need to plug in the device and click on the + sign located below the menu.<br>
+<br>
+<img border="0" src="img/hardware/printer9.png"><br> 
+<br>
+7. Once you click on the + sign above, you will see this window if the printer was detected properly. You can then select the method of connect and printer on the pane near the bottom of the window. (You may see more than one option if your device is an all in one device, so select from the left pane carefully.) From here you can also 
+select a <b>Network Printer</b> if you are connected to a home network and a printer is available.<br>
+<br>7.1 If for some reason you are unable to see a network printer on a machine using 
+Windows you may need to configure samba (a sharing and networking tool for Linux > 
+Windows) You can find help doing this 
+<a target="_blank" href="https://help.ubuntu.com/community/NetworkPrintingWithUbuntu">here</a>, as well as a thread for samba on the Linux Lite forums 
+<a target="_blank" href="https://www.linuxdistrocommunity.com/forums/showthread.php?tid=848">here</a>. 
+<br>
+<br>
+<img border="0" src="img/hardware/printer5.png"><br> 
+<br>
+8. Clicking Forward on the above window will bring you to this window where you can 
+set the <b>Printer Name, Description </b>and<b> Location</b> for the printer. 
+However <b>Description</b> and <b>Location</b> are not required, unless you share a printer or use one over a network.<br>
+<br>
+<img border="0" src="img/hardware/printer6.png"><br> 
+<br>
+9. Administration of Cups can also be handled by the web interface by clicking
+<a target="_blank" href="http://localhost:631">here</a><br>
+</p>
+
+<p><b>Resources for compatible printers</b></p>
+<p>
+<a target="_blank" href="http://www.openprinting.org/printers">Open Printing</a> Printer listing. Driver listing can also be found 
+<a target="_blank" href="http://www.openprinting.org/drivers">here</a><br>
+<a target="_blank" href="http://hplipopensource.com/hplip-web/supported_devices/combined.html">HP</a> 
+Compatible printers can be found here.<br>
+If you have an HP Printer and you used this guide to successfully install your 
+printer, there is a program that allows you to easily manage your printer. Open 
+up a terminal and type:</p>
+				<p>
+<b>sudo apt-get install hplip-gui</b></p>
+				<p>
+Once it&#39;s installed go to <b>Menu, Settings, HPLIP Toolbox</b>. This will place 
+and HP icon in your tray where you can configure and manage your HP printer. 
+Right click on the icon for options.</p>
+				<p>
+<img border="0" src="img/hardware/hp_tray.png"><br>
+<br>
+<a target="_blank" href="https://wiki.ubuntu.com/HardwareSupportComponentsPrinters">Ubuntu's</a> Wiki also contains a list of known working and compatible drivers and printers.<br>
+<a target="_blank" href="http://www.turboprint.info/">TurboPrint</a> - Also 
+offers a paid software alternative that has up to date drivers for Brother, 
+Canon, Epson &amp; HP.</p>
+				<p>
+<a href="#top">Top of page</a></p><hr>
+				<p>
+<br>
+</p>
+
+                <!--<p><font size="4"><b><a name="wirelessdev"></a>Wireless Devices</b></font></p>
+				<p>To be written.</p>
+				<p>
+<a href="#top">Top of page</a></p><hr>-->
+				<p>&nbsp;<font size="4"><b><a name="keyboard"></a>Keyboard Related</b></font></p>
+				<p>
+
+You can find information for adding or modifying hotkeys (or shortcuts) on the 
+<a target="_blank" href="http://docs.xfce.org/xfce/xfce4-settings/keyboard">XFCE wiki</a></p>
+				<p>
+
+<a href="#top">Top of page</a></p><hr>
+				<p>&nbsp;</p>
+				<p><font size="4"><b><a name="booting"></a>Booting Issues</b></font></p>
+				<p><b>Black screen whilst trying to boot</b></p>
+				<p>This is usually due to the graphics chip you have, it is 
+				easily remedied and the problem should not reappear once you 
+				have installed the <a href="#graphics">graphics drivers</a> for 
+				your computer. So first we need to boot you successfully into 
+				the desktop.</p>
+				<p>Hold down the shift key as you boot up your computer. You 
+				should see a screen like the following:</p>
+				<p>
+				<img border="0" src="img/installer/pass1.png"></p>
+				<p>Next press the <b>e</b> key whilst that top line is highlighted. This 
+				will take you to the next screen.<br>
+				Use your arrow keys to move down to the line highlighted in the 
+				picture below. Use the arrow key until you reach the end of that 
+				line.</p>
+				<p>
+				<img border="0" src="img/installer/pass2.png"></p>
+				<p>Press the backspace key repeatedly until you remove: <b>ro 
+				splash quiet $vt_handoff </b>and replace that<br>
+				text with:<b> nomodeset </b>so that it looks like the picture 
+				below.</p>
+				<p><img border="0" src="img/installer/pass8.png"></p>
+				<p>Now press either <b>F10</b> or <b>Ctrl+X</b> to boot your 
+				machine.<br>
+				Your computer will begin to boot up with scrolling text similar 
+				to what is shown below:</p>
+				<p><img border="0" src="img/installer/pass9.png"></p>
+				<p>After which shortly you will get your normal login screen. 
+				Now you can login and install your <a href="#graphics">graphics 
+				drivers</a>.</p>
+				<p><img border="0" src="img/installer/login2.png"></p>
+				<p><b>Dual Boot Modification/Repair</b></p>
+				<p>You may be in a situation where you want to modify or repair 
+				your dual boot set up.</p>
+				<p>Boot-Repair is an excellent tool for the job. To install Boot-Repair, open a terminal and type:</p>
+				<table border="0" width="800" id="table3" bgcolor="#FFFF55">
+					<tr>
+						<td><strong>sudo add-apt-repository 
+						ppa:yannubuntu/boot-repair &amp;&amp; sudo apt-get update<br />
+						<br />
+						then<br />
+						<br />
+						sudo apt-get install -y boot-repair &amp;&amp; (boot-repair &amp;)</strong></td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<p>After the install Boot-Repair will launch automatically and 
+				scan your computer for your boot configuration and other 
+				operating systems.</p>
+				<p>
+				<img height="260" src="img/hardware/boot-rep1.png" width="403" /></p>
+				<p>Click <strong>Advanced options</strong> to see all the 
+				features.</p>
+				<p>
+				<img height="339" src="img/hardware/boot-rep2.png" width="556" /></p>
+				<p>Now use Boot-Repair to carry out the task you need doing. 
+				Boot-Repair is in <strong>Menu, System</strong>.<br />
+				More information can be found here -
+				<a href="https://help.ubuntu.com/community/Boot-Repair" target="_blank">
+				https://help.ubuntu.com/community/Boot-Repair</a> </p>
+				<p>
+<a href="#top">Top of page</a></p>
+				<hr>
+				<p>
+
+&nbsp;</p>
+				<p>
+
+<font size="4"><b><a name="report"></a>Create System Report tool</b></font></p>
+				<p>
+
+The Create System Report tool was created to better help people who experienced 
+a problem with their computer. The report contains useful information about the 
+hardware, network and software. The idea of the tool is to run it, then you 
+would attach the generated file to a Forum thread with a title about the issue you are having. 
+Lets get started.</p>
+				<p>
+
+Click on <b>Menu, System, Create System Report</b>.</p>
+				<p>
+
+<img border="0" src="img/hardware/systemreport1.png"></p>
+				<p>
+
+A terminal will pop open, read the information in the window and enter your 
+password when ready.</p>
+				<p>
+
+<img border="0" src="img/hardware/systemreport2.png"></p>
+				<p>
+
+The report will take anywhere from a few seconds to less than a minute depending 
+on your hardware.<br>
+When it is finished you will see a screen like below.</p>
+				<p>
+
+<img border="0" src="img/hardware/systemreport3.png"></p>
+				<p>
+
+You can see that it says, &#39;<b>You now have a file called 
+systeminfo-Friday-21-June-2013-22:51:54.txt in your Home folder.</b>&#39;</p>
+				<p>
+
+Go to the Linux Distro Community Forums and then to the Linux Lite Support 
+section. A link is provided here -
+<a target="_blank" href="https://www.linuxdistrocommunity.com/forums/forumdisplay.php?fid=62">
+https://www.linuxdistrocommunity.com/forums/forumdisplay.php?fid=62</a> Start a 
+new thread with an accurate Title description of the problem you are having, 
+then a detailed write up of your problem. At the bottom of the page you will see 
+where you can add attachments. <b>Browse</b> to your Home folder and select the 
+report, then click on <b>Add Attachment</b>.</p>
+				<p>
+
+Now click on <b>Post Thread</b>, and someone will help you as soon as they&#39;re 
+available.</p>
+				<p>
+
+<img border="0" src="img/hardware/systemreport5.png"></p>
+				<p>
+
+				<a href="#top">Top of page</a></p><hr>
+				<p>
+
+&nbsp;</p>
+
+                <p><font size="4"><b><a name="seekhelp"></a>Finding help online</b></font></p>
+
+				<p>Feel free to seek advice or help on the 
+				<a target="_blank" href="https://www.linuxdistrocommunity.com/forums/forumdisplay.php?fid=62">forums</a> at any point. Or use any other means of support or contact located 
+				<a target="_blank" href="https://www.linuxliteos.com/support.html">here</a>. If you can not find a solution contained in this page or links of related information.</p>
+				<p><a href="#top">Top of page</a></p>
+            </div>
+            
+           	<div class="main_bottom"></div>
+</body>
+</html>
+
+ <!--
+Design by Bryant Smith
+http://www.bryantsmith.com
+http://www.aszx.net
+email: templates [-at-] bryantsmith [-dot-] com
+Released under Creative Commons Attribution 2.5 Generic.  In other words, do with it what you please; but please leave the link if you'd be so kind :)
+
+Name       : The Slant
+Version    : 1.0
+Released   : 2009-07-25
+-->

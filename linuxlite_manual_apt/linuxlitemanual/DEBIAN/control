@@ -1,0 +1,11 @@
+Package: linuxlitemanual
+Version: 1.0.6-20130829
+Essential: yes
+Section: base
+Priority: required
+Homepage: http//linuxliteos.com
+Maintainer: Linux Lite <valtam@linuxliteos.com>
+Architecture: all
+Description: Linux Lite Manual
+ Updates to the manual come when users need help.
+

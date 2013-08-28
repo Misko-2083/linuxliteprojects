@@ -1,0 +1,11 @@
+Package: linuxlitelusers
+Version: 1.0-3
+Essential: no
+Section: base
+Priority: required
+Homepage: http//linuxliteos.com
+Maintainer: Shaggy <twodopeshaggy@gmail.com>
+Architecture: all
+Description: luser.py User and Groups Manager
+ Help you with a gui tool to manage users and groups.
+

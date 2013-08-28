@@ -1,0 +1,5 @@
+PACKAGE (VERSION) UNRELEASED; urgency=low
+
+  * Initial release. (Closes: #XXXXXX)
+
+ -- shaggy <shaggy@riddlebox>  Sun, 11 Aug 2013 09:06:44 -0700
