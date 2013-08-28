@@ -1,8 +1,8 @@
 [Desktop Entry]
-Categories=Application;System;Utility
+Categories=Application;System
 Encoding=UTF-8
-Exec=gksudo -g luser.py
-Icon=luser
+Exec=gksudo -g groupman.py
+Icon=groupman
 StartupNotify=true
 Terminal=false
 Type=Application
