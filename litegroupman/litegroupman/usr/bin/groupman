@@ -62,7 +62,8 @@ take a look at the man pages for 'useradd', 'usermod',
 There are also tools with graphical front-ends (e.g.
 'kuser' for kde).
 
-Here is a list of common groups and their function in Arch.
+Here is a list of common groups and their functions.
+This does not list every possible group name, please seek help if your not sure.
 
     * audio = sound
     * camera = access to cameras.
