@@ -105,11 +105,11 @@ class Luser(gtk.Window):
     def __init__(self):
         gtk.Window.__init__(self)
 	self.set_title("Linux Lite User Manager")
+        self.set_icon_from_file(("/usr/share/pixmaps/groupman.png"))
         self.set_default_size(475,300)
         self.connect("destroy", self.exit)
         self.set_border_width(3)
         self.password = None
-
         self.notebook = gtk.Notebook()
         self.add(self.notebook)
         self.notebook.set_tab_pos(gtk.POS_TOP)
