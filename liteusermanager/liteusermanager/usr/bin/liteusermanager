@@ -654,7 +654,7 @@ def confirm(message):
 def asroot(cmd, pw):
     """Run a command as root, using the given password.
     """
-    child = pexpect.spawn('su -c "%s"' % cmd)
+    child = pexpect.spawn('su-to-root -c "%s"' % cmd)
     child.expect(':')
     child.sendline(pw)
     child.expect(pexpect.EOF)

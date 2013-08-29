@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Application;System
 Encoding=UTF-8
-Exec=gksudo -g liteusermanager
+Exec=liteusermanager
 Icon=liteusermanager
 StartupNotify=true
 Terminal=false
