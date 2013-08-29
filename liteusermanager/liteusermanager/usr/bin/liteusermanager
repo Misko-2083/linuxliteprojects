@@ -89,18 +89,19 @@ This does not list every possible group name, please seek help if your not sure.
 """)
 
 
-abouttext = _('<i>Linux Lite User Manager</i> is a simple front-end for'
+abouttext = _('<b>Linux Lite User Manager</b> is a simple front-end for'
                 ' user password and group management. It is'
-                ' designed to work with <i>Linux Lite</i>, but should'
+                ' designed to work with <b>Linux Lite</b>, but should'
                 ' work on most other linux systems.\n'
-                                'Go to <a href=\"https://www.linuxliteos.com\">Linux Lite website</a> for Help or Questions'
                 ' \n'
-                'This program was originaly written for the <i>larch</i> project:\n'
-                '       <a href=\"http://larch.berlios.de\">larch website</a>\n'
+                'This program was originally written for the <b>larch</b> project:\n'
+                '       <a href=\"http://larch.berlios.de\">http://larch.berlios.de</a>\n'
                 ' \n'                
-                'Modified for the <i>Linux Lite</i> project by:\n'
+                'Modified for the <b>Linux Lite</b> Project by:\n'
                 '       Johnathan "ShaggyTwoDope" Jenkins\n'
                 '       Jerry Bezencon'
+                ' \n'
+                '       <a href=\"https://www.linuxliteos.com\">https://www.linuxliteos.com</a>'
                 ' \n'
                 '\nIt is free software,'
                 ' released under GNU General Public License.')
