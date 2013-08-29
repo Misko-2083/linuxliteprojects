@@ -1,7 +1,7 @@
 [Desktop Entry]
 Categories=Application;System
 Encoding=UTF-8
-Exec=gksudo -g groupman.py
+Exec=gksudo -g groupman
 Icon=groupman
 StartupNotify=true
 Terminal=false
