@@ -44,11 +44,7 @@ def tr(s):
     return s
 __builtin__._ = tr
 
-helptext = _("""LUSER:
-
-If not started as root (administrator), this program
-will ask for the root password before it tries to make
-any changes.
+helptext = _("""Linux Lite User Manager:
 
 This program does not allow a normal user to change
 his password unless he knows the root (administrator)
