@@ -89,10 +89,11 @@ This does not list every possible group name, please seek help if your not sure.
 """)
 
 
-abouttext = _('<i>Linux Lite User Group Manager</i> is a simple front-end for'
+abouttext = _('<i>Linux Lite User Manager</i> is a simple front-end for'
                 ' user password and group management. It is'
                 ' designed to work with <i>Linux Lite</i>, but should'
                 ' work on most other linux systems.\n'
+                                'Go to <a href=\"https://www.linuxliteos.com\">Linux Lite website</a> for Help or Questions'
                 ' \n'
                 'This program was originaly written for the <i>larch</i> project:\n'
                 '       http://larch.berlios.de\n'
@@ -108,8 +109,8 @@ abouttext = _('<i>Linux Lite User Group Manager</i> is a simple front-end for'
 class Luser(gtk.Window):
     def __init__(self):
         gtk.Window.__init__(self)
-	self.set_title("Linux Lite User Group Manager")
-        self.set_icon_from_file(("/usr/share/pixmaps/groupman.png"))
+	self.set_title("Linux Lite User Manager")
+        self.set_icon_from_file(("/usr/share/pixmaps/liteusermanager.png"))
         self.set_default_size(475,300)
         self.connect("destroy", self.exit)
         self.set_border_width(3)

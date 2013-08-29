@@ -1,10 +1,10 @@
 [Desktop Entry]
 Categories=Application;System
 Encoding=UTF-8
-Exec=gksudo -g groupman
-Icon=groupman
+Exec=gksudo -g liteusermanager
+Icon=liteusermanager
 StartupNotify=true
 Terminal=false
 Type=Application
-Name=Manage users and groups
+Name=Manage Users and Groups
 Comment=
