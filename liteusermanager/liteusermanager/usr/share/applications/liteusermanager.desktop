@@ -1,11 +1,11 @@
 [Desktop Entry]
-Categories=Application;System
+Categories=Application;Settings
 Encoding=UTF-8
 Exec=liteusermanager
 Icon=liteusermanager
 StartupNotify=true
 Terminal=false
 Type=Application
-Name=Manage Users and Groups
-Comment=Help Manage Users and Groups on Linux Lite.
-GenericName=User Group Manager
+Name=User Manager
+Comment=Help Manage Users Their Groups on Linux Lite.
+GenericName=User Manager
