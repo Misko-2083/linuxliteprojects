@@ -528,8 +528,9 @@ def popupRootPassword():
             buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
                     gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
     dialog.set_property('title', 'Enter Password')
-    label = gtk.Label(_("To complete this operation you must enter"
-            " the Administrator password:"))
+    label = gtk.Label()
+    label.set_markup("To complete this operation you must enter"
+            " the <b>Administrator</b> password:")
     label.set_line_wrap(True)
     label.set_alignment(0.0, 0.5)
     dialog.vbox.pack_start(label)
