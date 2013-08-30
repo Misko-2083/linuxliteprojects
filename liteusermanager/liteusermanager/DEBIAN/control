@@ -3,6 +3,7 @@ Version: 1.0-3
 Essential: no
 Section: base
 Priority: required
+Depends: menu
 Homepage: http//linuxliteos.com
 Maintainer: Shaggy <twodopeshaggy@gmail.com>
 Architecture: all

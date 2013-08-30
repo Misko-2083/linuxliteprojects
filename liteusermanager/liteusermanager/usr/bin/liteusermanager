@@ -30,6 +30,8 @@
 ###  *) Configuration tab: On user creation set default group memberships.
 ###  *) Gui for 'passwd' - but I actually don't see how this can be easier
 ###    than typing passwd at a terminal and following the instructions!
+### 1) rename to user manager
+### 2) move to settings
 
 import gtk
 import os, sys, pwd, grp, crypt, random
