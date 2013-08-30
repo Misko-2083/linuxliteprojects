@@ -527,8 +527,9 @@ def popupRootPassword():
             flags=gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
             buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
                     gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
+    dialog.set_property('title', 'Enter Password')
     label = gtk.Label(_("To complete this operation you must enter"
-            " the root (administrator) password:"))
+            " the Administrator password:"))
     label.set_line_wrap(True)
     label.set_alignment(0.0, 0.5)
     dialog.vbox.pack_start(label)
@@ -593,6 +594,7 @@ def popupNewUser():
             flags=gtk.DIALOG_MODAL | gtk.DIALOG_DESTROY_WITH_PARENT,
             buttons=(gtk.STOCK_CANCEL, gtk.RESPONSE_REJECT,
                     gtk.STOCK_OK, gtk.RESPONSE_ACCEPT))
+    dialog.set_property('title', 'New User')
     labelu = gtk.Label(_("Enter user ('login') name:"))
     labelu.set_alignment(0.0, 0.5)
     dialog.vbox.pack_start(labelu)
