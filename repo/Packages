@@ -1,0 +1,17 @@
+Package: linuxliteusermanager
+Version: 1.0-3
+Architecture: all
+Essential: no
+Maintainer: Shaggy <twodopeshaggy@gmail.com>
+Depends: menu
+Filename: ./linuxliteusermanager_1.0-3_all.deb
+Size: 13604
+MD5sum: 13100b91095d2a37f5e13a716916dacd
+SHA1: 966decffbb96673ecdee28416cf6464a56564cd4
+SHA256: 18ba515425c25a11d0b429a5953a072961f5e7fb908b98694b884db967e52cb9
+Section: base
+Priority: required
+Homepage: http//linuxliteos.com
+Description: Linux Lite User and Groups Manager
+ A tool to help you easily manage users and groups on Linux Lite.
+

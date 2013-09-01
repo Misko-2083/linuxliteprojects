@@ -1,0 +1,7 @@
+Archive: precise
+Origin: Linux Lite
+Label: Linux Lite Repository
+Architecture: i386 amd64
+MD5Sum:
+ f625f0cb315fab8a5927e66323aac912              536 Packages
+ aecd64bf0584a86e54a4bfaa00ea14a2              396 Packages.gz
