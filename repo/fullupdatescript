@@ -1,6 +1,6 @@
 #! /bin/sh
 
-dpkg-scanpackages . /dev/null > Packages
+dpkg-scanpackages -m . /dev/null > Packages
 
 gzip -9c Packages > Packages.gz
 

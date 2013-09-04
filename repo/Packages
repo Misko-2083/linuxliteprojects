@@ -4,7 +4,7 @@ Architecture: all
 Essential: no
 Maintainer: Shaggy <twodopeshaggy@gmail.com>
 Depends: menu
-Filename: ./linuxliteusermanager_1.0-3_all.deb
+Filename: ./all/linuxliteusermanager_1.0-3_all.deb
 Size: 13604
 MD5sum: 13100b91095d2a37f5e13a716916dacd
 SHA1: 966decffbb96673ecdee28416cf6464a56564cd4
@@ -14,4 +14,82 @@ Priority: required
 Homepage: http//linuxliteos.com
 Description: Linux Lite User and Groups Manager
  A tool to help you easily manage users and groups on Linux Lite.
+
+Package: linuxliteusermanager
+Version: 1.0-4
+Architecture: all
+Essential: no
+Maintainer: Johnathan Jenskins <twodopeshaggy@gmail.com>
+Depends: menu
+Filename: ./all/linuxliteusermanager_1.0-4_all.deb
+Size: 13622
+MD5sum: 41e6861067f28c6ea8623d0c67d540c8
+SHA1: 73c860753aede9f540e2ac1db859a383360c4c9a
+SHA256: 7a614e57491c11efd41cadb331ea8a63339c3014a9fb5cd08ac75da78f1f4e57
+Section: base
+Priority: required
+Homepage: https//www.linuxliteos.com
+Description: Linux Lite User and Groups Manager
+ A tool to help you easily manage users and groups on Linux Lite.
+
+Package: skype
+Version: 4.2.0.11-1
+Architecture: i386
+Maintainer: Skype Technologies <info@skype.net>
+Installed-Size: 38248
+Depends: libasound2 (>= 1.0.23), libc6 (>= 2.3.6-6~), libc6 (>= 2.7), libgcc1 (>= 1:4.1.1), libqt4-dbus (>= 4:4.5.3), libqt4-network (>= 4:4.8.0), libqt4-xml (>= 4:4.5.3), libqtcore4 (>= 4:4.7.0~beta1), libqtgui4 (>= 4:4.8.0), libqtwebkit4 (>= 2.2~2011week36), libstdc++6 (>= 4.6), libx11-6, libxext6, libxss1, libxv1, libssl1.0.0
+Recommends: sni-qt, libasound2-plugins
+Conflicts: skype-mid, skype-common, skype-bin
+Replaces: skype-mid, skype-common, skype-bin
+Filename: ./i386/skype-ubuntu-precise_4.2.0.11-1_i386.deb
+Size: 17010546
+MD5sum: 927de96176ee01c03f53c5975b628e4f
+SHA1: 0d6abcfcfb5cf378a310ae87cb4bfc46c6c66382
+SHA256: 7ffaa8537a4bf4b71860feeebd32539998c9450c561daa3e7535f098d521c3cc
+Section: non-free/net
+Priority: extra
+Description: Wherever you are, wherever they are
+ Skype keeps you together. Call, see, message and share with others.
+  * It's free to download and join.
+  * Call, instant message and send photos and documents to anyone else on Skype.
+  * And with a webcam you can catch up face-to-face with a video call.
+  * Call mobiles and landlines worldwide at low rates.
+  * Easily text message anywhere in the world.
+  * Get your friends together on a conference call.
+ .
+ And that's just the start...
+
+Package: viewnior
+Version: 1.3-1
+Architecture: i386
+Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
+Installed-Size: 724
+Depends: libc6 (>= 2.4), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.16.0), libgtk2.0-0 (>= 2.20.0)
+Filename: ./i386/viewnior_1.3-1_i386.deb
+Size: 134670
+MD5sum: ccc8e4c050c4b9b442891102262eae97
+SHA1: 19c5bad684b855870b6cdc15e31e9d45aeaaf7a2
+SHA256: 7774898fcf72aef9eac831d5d6555b8b1e50a1bf58ee7492c4670bc87137e2b1
+Section: unknown
+Priority: extra
+Homepage: http://xsisqox.github.io/Viewnior/index.html
+Description: Viewnoir image viewer.
+ Capable of viewing typical image formats, and setting wallpapers on most popular desktops.
+
+Package: viewnior
+Version: 1.3-1
+Architecture: amd64
+Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
+Installed-Size: 724
+Depends: libc6 (>= 2.4), libgdk-pixbuf2.0-0 (>= 2.22.0), libglib2.0-0 (>= 2.16.0), libgtk2.0-0 (>= 2.20.0)
+Filename: ./amd64/viewnior_1.3-1_amd64.deb
+Size: 134650
+MD5sum: c8014d4685f2a800ab92fd86144d3386
+SHA1: 7a2428957c987ba7428fe16a796f2ac06f475eee
+SHA256: 104818ea463d3706c184598d910eca393df64b769da2d2ab5413f45e8be39b74
+Section: unknown
+Priority: extra
+Homepage: http://xsisqox.github.io/Viewnior/index.html
+Description: Viewnoir image viewer.
+ Capable of viewing typical image formats, and setting wallpapers on most popular desktops.
 

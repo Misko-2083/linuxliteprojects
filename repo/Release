@@ -3,5 +3,5 @@ Origin: Linux Lite
 Label: Linux Lite Repository
 Architecture: i386 amd64
 MD5Sum:
- f625f0cb315fab8a5927e66323aac912              536 Packages
- aecd64bf0584a86e54a4bfaa00ea14a2              396 Packages.gz
+ 24779497a57c52bdecdddc18e1a89974             3785 Packages
+ 29c89bf78eaa8c833e9d18b5b1361ab0             1603 Packages.gz
