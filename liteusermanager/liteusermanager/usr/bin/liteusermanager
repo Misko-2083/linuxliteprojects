@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 #  liteusermanager
+#
 #  Copyright 2008 Michael Towers <gradgrind[at]online[dot]de>
 #  Copyright 2013 Johnathan Jenkins <twodopeshaggy@gmail.com>
 #  
@@ -49,7 +50,8 @@ There are also tools with graphical front-ends (e.g.
 'kuser' for kde).
 
 Here is a list of common groups and their functions.
-This does not list every possible group name, please seek help if your not sure.
+This does not list every possible group name, please
+seek help on the Linux Lite Site if your not sure.
 
     * audio = sound
     * camera = access to cameras.
