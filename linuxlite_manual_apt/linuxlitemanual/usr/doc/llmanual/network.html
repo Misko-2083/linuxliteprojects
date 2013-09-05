@@ -34,7 +34,8 @@
 				<a href="#nas">Accessing a NAS device</a><br>
 				<a href="#shares">Network Shares</a><br>
 				<a href="#wintolin">Accessing you Linux Lite Shares from Windows</a><br>
-				<a href="#lintowin">Accessing you Windows Shares from Linux Lite</a><br>
+				<a href="#lintowin">Accessing you Windows Shares from Linux Lite</a><br />
+				<a href="#date">Setting the Time and Date</a><br>
 				<a href="#timezone">Changing your timezone</a></p>
 				<p><b><font size="4">Connecting to the Internet with Wired</font></b></p>
 				<p>For the most part, you shouldn&#39;t have to configure anything 
@@ -457,7 +458,32 @@
 				<p>
 				<a href="#top">Top of page</a></p><hr>
 				<p>&nbsp;</p>
-				<p><font size="4"><a name="timezone"></a><b>Changing your timezone</b></font></p>
+				<p><font size="4"><a name="date"></a><b>Setting the Time and 
+				Date</b></font></p>
+				<p>&nbsp;Open up a terminal and 
+				type:</p>
+				<table border="0" width="800" id="table11" bgcolor="#FFFF55">
+					<tr>
+						<td>sudo hwclock --hctosys</td>
+					</tr>
+				</table>
+				<br />
+				<p>followed by your password. This will get the time from your 
+				bios and set it. You can also use:</p>
+				<table border="0" width="800" id="table12" bgcolor="#FFFF55">
+					<tr>
+						<td>sudo ntpdate ntp.ubuntu.com</td>
+					</tr>
+				</table>
+				<p>&nbsp;</p>
+				<p>which will sync your clock with an online server (requires an 
+				internet connection).</p>
+				<p>In the future we will be offering a simple Time and Date 
+				application that will also allow you to change your timezone.</p>
+				<p><a href="#top">Top of page</a></p>
+				<hr>
+				<p>&nbsp;</p>
+				<p><font size="4"><b><a name="timezone"></a>Changing your timezon<strong>e</strong></b></font></p>
 				<p>Open up a terminal and type:</p>
 				<table border="0" width="800" id="table10" bgcolor="#FFFF55">
 					<tr>
