@@ -1,5 +1,8 @@
-PACKAGE (VERSION) UNRELEASED; urgency=low
+PACKAGE (VERSION) precise; urgency=low
 
+  [ shaggy ]
   * Initial release. (Closes: #XXXXXX)
 
- -- shaggy <shaggy@riddlebox>  Sun, 11 Aug 2013 09:06:44 -0700
+  [ Johnathan Jenkins ]
+
+ -- Johnathan Jenkins <twodopeshaggy@gmail.com>  Thu, 05 Sep 2013 06:27:01 -0700
