@@ -1,11 +1,11 @@
-Package: linuxliteusermanager
-Version: 1.0-4
+Package: liteusermanager
+Version: 1.0-6
 Essential: no
 Section: base
 Priority: required
 Depends: menu
-Homepage: https//www.linuxliteos.com
-Maintainer: Johnathan Jenskins <twodopeshaggy@gmail.com>
+Homepage: https://www.linuxliteos.com
+Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
 Architecture: all
 Description: Linux Lite User and Groups Manager
  A tool to help you easily manage users and groups on Linux Lite.
