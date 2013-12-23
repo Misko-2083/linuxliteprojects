@@ -44,7 +44,7 @@ while [ opt != '' ]
         case $opt in
         1) clear;
         option_picked "Launched Browser with Help Manual";
-    xdg-open /usr/share/doc/xfce4-utils/html/C/install.html#updates 2&>1 >/dev/null &
+    firefox /usr/share/doc/xfce4-utils/html/C/install.html#updates &> /dev/null;
     	clear;
 	show_menu;
         ;;
