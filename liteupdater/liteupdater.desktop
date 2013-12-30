@@ -1,0 +1,11 @@
+[Desktop Entry]
+Categories=Application;Settings
+Encoding=UTF-8
+Exec=liteupdater
+Icon=updates_ll
+StartupNotify=true
+Terminal=false
+Type=Application
+Name=Update Manager
+Comment=Update Linux Lite
+GenericName=Update Manager

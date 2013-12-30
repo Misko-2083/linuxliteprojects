@@ -13,5 +13,5 @@ setup(name = "liteupdater",
     url = "http://linuxliteos.com",
     license = "GPL2",
     scripts = ['liteupdater','liteupdatertray'],
-    data_files = [('share/liteupdater',['README','AUTHORS','COPYING',]),('/usr/share/pixmaps', ['updates_ll.png','updates_avail.png','menu-icon.png'])]    
+    data_files = [('share/liteupdater',['README','AUTHORS','COPYING',]),('/usr/share/pixmaps', ['updates_ll.png','updates_avail.png','menu-icon.png']),('/usr/share/applications', ['liteupdater.desktop'])]    
 ) 
