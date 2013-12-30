@@ -12,5 +12,5 @@ setup(name = "liteupdater",
     author_email = "twodopeshaggy@gmail.com",
     license = "GPL2",
     scripts = ['liteupdater','liteupdatertray'],
-    data_files = [('share/liteupdater',['README','AUTHORS','COPYING','trayicon.png','availabletrayicon.png'])]    
+    data_files = [('share/liteupdater',['README','AUTHORS','COPYING','updates_ll','updates_avail.png'])]    
 ) 
