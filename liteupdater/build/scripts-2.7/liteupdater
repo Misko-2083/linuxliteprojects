@@ -1,0 +1,504 @@
+#!/bin/python2
+#  
+#
+#  Copyright 2013 Johnathan "ShaggyTwoDope" Jenkins <twodopeshaggy@gmail.com>
+#  
+#  This program is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU General Public License as published by
+#  the Free Software Foundation; either version 2 of the License, or
+#  (at your option) any later version.
+#  
+#  This program is distributed in the hope that it will be useful,
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#  GNU General Public License for more details.
+#  
+#  You should have received a copy of the GNU General Public License
+#  along with this program; if not, write to the Free Software
+#  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+#  MA 02110-1301, USA.
+#  
+#  
+#  todo:-
+#  reload exiting entire program on finish
+#  about dialog wont close properley
+
+import pygtk
+pygtk.require('2.0')
+import gtk, apt.progress.gtk2, apt, sys, os
+from optparse import OptionParser, OptionGroup, SUPPRESS_HELP
+#will later set proper app name and iconpath
+progname = os.path.basename(sys.argv[0])
+iconfile = '/usr/local/share/liteupdater/available.png'
+
+class MainScreen:
+    # Cancel/exit
+    def delete_event(self, widget, event, data=None):
+        gtk.main_quit()
+        return False
+    
+    def ok_event(self, widget,event,data=None):
+        """install selected packages"""
+        model=Store.tree_store
+        anytrue = False
+        try:
+            num = 1
+            while True:
+                if model[num][1] == True:
+                    aptget.mark_upgrade(model[num][2])
+                    anytrue = True
+                num +=1
+        except IndexError:
+            pass
+        if anytrue == False: return # non marked for upgrade so dont need to do anything
+
+        #grey out main window while upgrading
+        self.vbox.set_sensitive(False)
+        while gtk.events_pending():
+            gtk.main_iteration(False)
+        #do upgrade
+        if aptget.upgrade_gtk(self.vbox) == True: #no probs
+            self.label.set_markup('Updates Installed')
+        else: #there was a problem
+            self.label.set_markup('Problem Installing Updates')
+        #and ungrey
+        self.vbox.set_sensitive(True)
+        while gtk.events_pending():
+            gtk.main_iteration(False)
+        
+
+
+    def toggle_event(self, widget,event,data=None):   
+        """toggle mark all"""
+        self.bl_toggle_all = not self.bl_toggle_all
+        model=Store.tree_store
+        try:
+            num= 0
+            while True:
+                if model[num][3] == 'no_updates':
+                    break
+                model[num][1] = self.bl_toggle_all
+                num += 1
+        except IndexError:
+            return
+            
+    def reload_event(self,widget,event,data=None):
+        """reload cache"""
+        # fixme, exits auto not reloading
+        aptget.upgradelist = []
+        self.dependencylist = []
+        aptget.update_gtk(self.window)  #load cache 'visually'
+        aptget.upgradable_pkg() #get upgrades
+        self.view = Store.make_view()
+        
+        
+    def about_dialogue(self, widget):
+        about = gtk.AboutDialog()
+        about.set_program_name(progname)
+        about.set_version("0.1")
+        about.set_copyright("John Jenkins")
+        about.set_comments("Lite Updater")
+        about.run()
+        about.destroy()
+
+    def __init__(self):
+        self.bl_toggle_all = False #store toggle all state
+        
+        self.window = gtk.Window(gtk.WINDOW_TOPLEVEL)
+        self.window.set_title(progname)
+        self.window.set_size_request(400, 400)
+        self.window.set_gravity(gtk.gdk.GRAVITY_CENTER)
+        self.window.connect("delete_event", self.delete_event)
+        
+        aptget.upgradelist = []
+        aptget.update_gtk(self.window)  #load cache 'visually'
+        aptget.upgradable_pkg() #get upgrades
+        global Store
+        Store=buildlistview() #build up the list
+        
+        #enable scrolling
+        self.scrolledwindow = gtk.ScrolledWindow()
+        #initiate first container box
+        self.vbox = gtk.VBox()
+
+		#do we need about dialog?
+        #setup menubar
+        #self.menubox = gtk.MenuBar()
+        #self.filemenu = gtk.Menu()
+        #self.about = gtk.MenuItem("About")
+        #self.about.set_submenu(self.filemenu)
+        #self.about.connect("activate", self.about_dialogue)
+        #self.menubox.add(self.about)
+        #self.vbox.pack_start(self.menubox,False,False,0)
+        
+        #container for list
+        self.scrolledwindow.set_policy(gtk.POLICY_NEVER, gtk.POLICY_AUTOMATIC)       
+        self.vbox.pack_start(self.scrolledwindow, True) 
+        #setup text box
+        self.textbox = gtk.HBox()
+        self.vbox.pack_start(self.textbox, False)
+        self.label = gtk.Label()
+        size = 0
+        self.label.set_markup("\n<big>%i Updates. Total %s to download</big>" % 
+                (len(aptget.upgradelist)+len(aptget.dependencylist), aptget.sizeformat(aptget.totalsize)))
+        self.label.set_justify(gtk.JUSTIFY_LEFT)
+        self.textbox.add(self.label)
+        # setup button box
+        self.buttonbox = gtk.HButtonBox()
+        self.vbox.pack_start(self.buttonbox, False)
+        #setup left aligned button sub box
+        self.buttonbox1 = gtk.HButtonBox()
+        self.boxleft = gtk.Alignment(0, 1, 0, 0)
+        self.boxleft.add(self.buttonbox1)
+        self.buttonbox.pack_start(self.boxleft, False,False,0)
+        #setup right aligned sub box
+        self.buttonbox2 = gtk.HButtonBox()
+        self.boxright = gtk.Alignment(1, 0, 0, 0)
+        self.boxright.add(self.buttonbox2)        
+        self.buttonbox.pack_start(self.boxright, False,False,0)        
+        
+        #bottom buttons on main dialog, reload disabled til fixme
+        self.b0 = gtk.Button('OK')
+        self.b0.connect("clicked", self.ok_event, "install selected updates") 
+        self.b1 = gtk.Button('Close')       
+        self.b1.connect("clicked", self.delete_event, "Exit without installing updates")
+        self.b2 =gtk.Button('Mark/unmark all')
+        self.b2.connect("clicked",self.toggle_event,"mark / unmark all upgrades")
+        #self.b3 = gtk.Button('Reload')
+        #self.b3.connect("clicked",self.reload_event,"reload cache")
+        self.buttonbox1.pack_start(self.b2,False,False,0)
+        #self.buttonbox1.pack_start(self.b3,False,False,0)
+        self.buttonbox2.pack_start(self.b0,False,False,0)
+        self.buttonbox2.pack_start(self.b1,False,False,0)
+
+        # Get the model and attach it to the view
+        self.view = Store.make_view()
+        
+        self.scrolledwindow.add(self.view)
+        self.window.add(self.vbox)
+        self.window.show_all()
+
+
+
+class buildlistview:
+    def __init__(self):    
+        self.reload_list()
+               
+    def reload_list(self):
+        self.tree_store = gtk.ListStore( 'gchararray', 'gboolean', 'gchararray','gchararray','gchararray')
+        #liststore stores in order: 
+        #name and description (column 1), tickbox (column 2)
+        # name (for getting dependencies), 
+        #archive for sorting under headings also used by toggle funcs for no update row
+        # name again not used at the moment 
+        for item in aptget.upgradelist:
+            displaydetail, name, archive = aptget.pkgdetails(item[0])
+            self.tree_store.append((displaydetail,None,name,archive,item[1]))
+        
+        #dont want to sort labels when we add them so turn off sorting straight away (the -2)
+        self.tree_store.set_sort_column_id(3, gtk.SORT_ASCENDING)
+        self.tree_store.set_sort_column_id(-2, gtk.SORT_ASCENDING)       
+        
+        #insert headings into list
+        for position,row in enumerate(self.tree_store):
+            if row[3].endswith('security'):
+                self.tree_store.insert(position,("<b><big>Security Updates</big></b>",None,None,'void',None))
+                break
+        for position,row in enumerate(self.tree_store):
+            if row[3].endswith('updates'):
+                self.tree_store.insert(position,("<b><big>Recommended Updates</big></b>",None,None,'void',None))
+                break
+        for position,row in enumerate(self.tree_store):
+            if row[3].endswith('proposed'):
+                self.tree_store.insert(position,("<b><big>Proposed Updates</big></b>",None,None,'void',None))
+                break
+        for position,row in enumerate(self.tree_store):           
+            if row[3].endswith('backports'):
+                self.tree_store.insert(position,("<b><big>Unsupported Updates</big></b>",None,None,'void', None))
+                break
+        for position,row in enumerate(self.tree_store):           
+            if row[3].endswith('12.04.xx'):
+                self.tree_store.insert(position,("<b><big>Ubuntu LTS Updates</big></b>",None,None,'void', None))
+                break
+                
+        if len(self.tree_store) == 0:
+            self.tree_store.append(("<b><big>No updates available</big></b>",False,None,'no_updates',None))
+                           
+    def make_view( self):
+        self.view = gtk.TreeView(self.tree_store )
+        self.renderer = gtk.CellRendererText()
+        ## setup tick boxes
+        self.renderer1 = gtk.CellRendererToggle()
+        self.renderer1.connect( 'toggled', self.toggle_tickbox,self.tree_store )
+        #set width for text column
+        self.renderer.set_property('wrap-mode', gtk.WRAP_WORD)
+        self.renderer.set_property('wrap-width', 300)
+        # Connect column0 of the display with column 0 in our list model
+        self.column0 = gtk.TreeViewColumn("Package", self.renderer, markup=0)
+        # The columns active state is attached to the second column
+        self.column1 = gtk.TreeViewColumn("", self.renderer1 )
+        self.column1.add_attribute( self.renderer1, "active", 1)
+        
+        self.view.append_column( self.column0 )
+        self.view.append_column( self.column1 ) 
+        return self.view
+        
+    def toggle_tickbox( self, cell, path, model ):
+        model[path][1] = not model[path][1]
+        if model[path][3] == 'void': #select section if header selected
+            for pathtemp in range(int(path)+1,len(model)):
+                if model[pathtemp][3] == 'void':  break 
+                model[pathtemp][1] =  model[path][1]
+        if model[path][3] == 'no_updates': #dont want to try and install this
+            model[path][1] = not model[path][1] #so untick it again
+                
+
+
+class Apt ():
+    """all the apt-get stuff"""
+    def __init__(self):
+        self.upgradelist = []
+        self.dependencylist = []
+        self.dependencylisttemp = []
+        self.totalsize = 0
+		
+    def update (self):
+        """apt-get update"""
+        self.pkglist = apt.Cache()
+
+    def update_gtk(self,window):
+        """"graphical version of update()"""        
+        dialog = gtk.Dialog("Loading Cache", window, gtk.DIALOG_DESTROY_WITH_PARENT,(gtk.STOCK_CLOSE, gtk.RESPONSE_CLOSE))
+        dialog.connect("response", gtk.main_quit)
+        dialog.connect("destroy", gtk.main_quit)
+        dialog.set_size_request(200, 75)
+        
+        progress = apt.progress.gtk2.GtkAptProgress()
+        box = dialog.get_child()
+        box.pack_start(progress, False, False, 0)
+        
+        dialog.show_all()
+        
+        self.pkglist = apt.Cache(progress.open)
+        #dialog.run()
+        dialog.destroy()
+        
+    def upgradable_pkg(self):
+        """check what updates there are"""
+        for pkg in self.pkglist:
+            self.upgradable_pkg_main(pkg)
+        self.upgradelist.sort()
+        if len(self.upgradelist) == 0:
+            return False
+        else:
+            return True
+    
+    def upgradable_pkg_main(self,pkg):
+        if pkg.isUpgradable :
+            self.upgradelist.append([pkg,pkg.name])
+            
+    def pkgregex(self,str):
+        """used to detect certain things in package names"""
+        import re
+        version = re.compile('\\(= [0-9.]*\\)$')#version specification
+        eitheror = re.compile(r' | ') #either or
+        if version.search(str):
+            match = version.search(str)
+            str = str[:match.start()]
+            return str.strip()
+        
+        elif eitheror.search(str):
+            #can't pass list back so need to get best candidate .... 
+            str = str.split(' | ')
+            for entries in str: 
+                entries.strip()
+                try:
+                    if self.pkglist[entries].isInstalled:
+                        return entries # preferably an already installed dependency....
+                except:  pass            
+            return str[-1].strip() #if not the last (newest) ???? dependency       
+        
+        else: 
+            return str.strip()
+            
+    def pkgdependencies(self,pkg):
+        """ hopefully, (fingers crossed) sort out depencies)"""
+        depends = pkg.candidateRecord.get('Depends').split(',')
+        
+        for entries in depends:
+            try:
+                entries = self.pkgregex(entries)
+                self.pkglist[entries].isInstalled
+                if not self.pkglist[entries].isInstalled:
+                    self.dependencylisttemp.append(self.pkglist[entries])
+                    self.pkgdependencies(self.pkglist[entries])
+                elif self.pkglist[entries].isUpgradable:
+                    self.dependencylisttemp.append(self.pkglist[entries])
+                    self.pkgdependencies(self.pkglist[entries])
+            except KeyError: #not installed
+                    pass
+ 
+    
+    def mark_upgrade(self, pkg):
+        try:
+            self.pkglist[pkg].markUpgrade()
+        except:
+            pass
+            
+    def upgrade(self):
+        """apt-get upgrade (selected packages) actually upgrade the packages"""
+        cache.commit(apt.progress.TextFetchProgress(),apt.progress.InstallProgress())				
+        
+    def upgrade_gtk(self, window):
+        """upgrade for gtk"""
+        if os.getuid() == 0: #we are running as root
+            progress = apt.progress.gtk2.GtkAptProgress()
+            window.add(progress)
+            progress.show()
+            progress.show_terminal(expanded=True)
+            self.pkglist.commit(progress.fetch, progress.install)
+        else: #need to run another process as root, so sudo it
+            import subprocess
+            string = '' #need to hand the new process the upgrade script
+            for entries in self.pkglist:
+                if entries.markedUpgrade:
+                    string += entries.name + " , "
+            string = string[:-3]
+            if subprocess.call(['gksu','-D %s'% progname,'%s -r' % sys.argv[0], string]) != 0:
+                #something went wrong 
+                return False
+            else: return True
+            
+    def sizeformat(self,size):
+        suffix = ['B','KB','MB','GB','TB']
+        count = 0
+        while size >= 1024 and count < len(suffix)-1:
+            count += 1
+            size = size/1024
+        return str("%i%s" % (size, suffix[count]))
+    
+    def pkgdetails(self, pkg):
+        """detail of packages"""
+        #pkg.name, summary, description, packageSize, section, priority
+        #architecture, installedVersion, candidateVersion, candidateOrigin
+
+        # for dependencies
+        self.dependencylisttemp = []
+        #self.pkgdependencies(pkg)
+        depends = ''
+        size = 0
+        for entries in self.dependencylisttemp:
+            depends += entries.name + ','
+            size = size + int(entries.packageSize)
+            if entries.name not in self.dependencylist and entries.name not in self.upgradelist[1]: 
+                self.totalsize += entries.packageSize #add to total download size          
+                self.dependencylist.append(entries.name)
+
+        self.totalsize += pkg.packageSize
+        return ['%s \n%s \n%s \n%s\ndependencies to download- %s \n[%s]\n'%
+            (pkg.name,pkg.candidateOrigin[-1].archive,pkg.summary, pkg.candidateOrigin[-1].archive,
+            depends, self.sizeformat(size + pkg.packageSize)),pkg.name,pkg.candidateOrigin[-1].archive]
+        		
+#not in use yet, let us pray
+def restart_program(self, widget):
+    executable = sys.executable
+    args = sys.argv[:]
+    args.insert(0, sys.executable)
+    os.execvp(executable, args)
+        
+
+def root_install(args):
+    """this is called from aptget.install_gtk() as a separate program run as root
+    to install the updates""" 
+    import sys
+    import time
+    
+    window = gtk.Window()
+    window.connect("destroy", gtk.main_quit)
+    window.set_gravity(gtk.gdk.GRAVITY_CENTER)
+    progress = apt.progress.gtk2.GtkAptProgress()
+    window.set_title("Installing updates")
+    progress.show_terminal(expanded=True)
+    window.add(progress)
+    progress.show()
+    window.show()
+    
+    cache = apt.cache.Cache(progress.open)
+    try:
+        for package in args.split(" , "):
+            #print cache[package].name
+            cache[package].markUpgrade()
+    except AttributeError: #only one
+        #print cache[args].name
+        cache[args].markUpgrade()
+    cache.commit(progress.fetch, progress.install) #what we actually need root for
+    time.sleep(3)
+    sys.exit(0)
+    
+def Statusicon(tooltip_text):
+    def quit_si(widget, data = None):
+        if data: data.set_visible(False)
+        gtk.main_quit()
+    
+    statusicon = gtk.StatusIcon()
+    statusicon.set_from_file(iconfile)
+    statusicon.set_tooltip("there are %i updates available" % tooltip_text)
+    statusicon.connect('activate', quit_si)
+    statusicon.set_visible(True)
+    gtk.main()
+
+if __name__ == "__main__":
+    # -d daemon mode- when run silently checks for updates, if it finds any
+    # does something, otherwise it just quits
+    # -m manually check up dates before installing
+    # -a automatic automatically installs all updates
+    # -n prints updates available to stdout
+    # -r root mode not to be called directly
+    # default run in graphical mode, check for updates
+    parser = OptionParser(
+        version=" %prog V0.1  <twodopeshaggy@gmail.com>",   
+        description = "%prog - Lite Updater",
+        usage = "%prog [-admth] [--automatic] [--daemon] [--manual] [--terminal] [--help] [--version]")
+    parser.add_option("-d","--daemon",action="store_true",dest="bldaemon",default=False,help="not really a daemon, will check for updates, if theres non, will silently exit, else will do something" )
+    parser.add_option("-a","--automatic", action="store_true" , dest="blautomatic", default=False, help="automatically install all updates")
+    parser.add_option("-m","--manual",action="store_false", dest="blautomatic",default=False, help="(default) check updates before installing")
+    parser.add_option("-t","--terminal",action="store_true", dest="blterminal",default=False, help="print number of updates and available updates to stdout")
+    #need root to do the actual install, this option used to call install_root()
+    parser.add_option("-r",action="store_true", dest="blroot",default=False, help=SUPPRESS_HELP)
+    (options,args) = parser.parse_args() #actually parse args
+ 
+    if options.blroot:
+        root_install(args[0])  
+  
+    aptget=Apt()
+    
+    if options.bldaemon or options.blterminal or options.blautomatic:
+        aptget.update()
+        if not aptget.upgradable_pkg():
+            if options.bldaemon or options.blautomatic: #no upgrades, so dont need to do any more.
+                sys.exit(0)
+        if options.blterminal:
+            print len(aptget.upgradelist), 'updates'
+            for entries in aptget.upgradelist:
+                print entries[0].name
+            sys.exit(0)
+        if options.blautomatic: #or just upgrade(distUpgrade=True) ???
+            if os.getuid == 0:
+                for entries in aptget.upgradelist:
+                    aptget.mark_upgrade(entries[0].name)
+                aptget.upgrade()
+                sys.exit(0)
+            else:
+                print "need to be root"
+                sys.exit(0)
+
+    if options.bldaemon: #popup icon if in daemon mode
+        Statusicon(len(aptget.upgradelist))
+
+    #aptget.update_gtk()  #load cache 'visually'
+    #aptget.upgradable_pkg() #get upgrades
+    #Store=buildlistview() #build up the list
+    mainscreen = MainScreen()  #and start
+    gtk.main()	
+
+
