@@ -3,6 +3,7 @@ Version: 1.0-4
 Essential: no
 Section: base
 Priority: required
+Installed-Size: 56
 Depends: menu
 Homepage: https//www.linuxliteos.com
 Maintainer: Johnathan Jenskins <twodopeshaggy@gmail.com>
