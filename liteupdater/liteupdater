@@ -29,7 +29,7 @@ import gtk, apt.progress.gtk2, apt, sys, os
 from optparse import OptionParser, OptionGroup, SUPPRESS_HELP
 #will later set proper app name and iconpath
 progname = os.path.basename(sys.argv[0])
-iconfile = '/usr/local/share/liteupdater/available.png'
+iconfile = '/usr/share/pixmaps/updates_ll.png'
 
 class MainScreen:
     # Cancel/exit
