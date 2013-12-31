@@ -345,7 +345,7 @@ class Users(gtk.HBox):
             else:
                 # Normal MD5 password
                 pwcrypt = encryptPW(pw)
-            ccode, op = gui.rootrun("useradd -m -g users -p '%s' %s" %
+            ccode, op = gui.rootrun("useradd --shell=/bin/bash -m -g users -p '%s' %s" %
                     (pwcrypt, user))
             if (ccode != 0):
                 error(_("It was not possible to add  user '%s'."
