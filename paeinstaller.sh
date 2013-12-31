@@ -64,7 +64,7 @@ while [ opt != '' ]
                      echo "You cannot install the PAE Kernel as your processor appears not to support it."; 
                        else
                           sudo apt-get install linux-generic-pae linux-headers-generic-pae -y
-				sudo sed -i "s/GRUB_DEFAULT=0/GRUB_DEFAULT=/"Previous Linux versions>0"/g" /etc/default/grub
+				sudo sed -i "s/GRUB_DEFAULT=0/GRUB_DEFAULT="\Previous Linux versions>0"\/g" /etc/default/grub
 				sudo sed -i "s/GRUB_HIDDEN_TIMEOUT=0/#GRUB_HIDDEN_TIMEOUT=0/g" /etc/default/grub
 				sudo sed -i "s/GRUB_HIDDEN_TIMEOUT_QUIET=true/#GRUB_HIDDEN_TIMEOUT_QUIET=true/g" /etc/default/grub
 					sudo update-grub2
