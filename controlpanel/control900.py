@@ -80,7 +80,7 @@ class Startup:
         # we make the icons
         it=gtk.icon_theme_get_default()
         gtk.window_set_default_icon(it.load_icon("gtk-preferences",48,gtk.ICON_LOOKUP_FORCE_SVG))
-        window.resize(800,400)
+        window.resize(740,400)
         self.liststore=gtk.ListStore(gtk.gdk.Pixbuf,str,str)
         self.iv=gtk.IconView(self.liststore)
         self.iv.set_pixbuf_column(0)
