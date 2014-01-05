@@ -29,6 +29,26 @@ zoose_icons=[
 ["Appearance","preferences-desktop-theme",'firefox'],
 ["Install Software","package-manager-icon",'package-manager'],
 ["Session Settings","gnome-window-manager",'firefox'],
+["Screensaver Settings","xscreensaver",'xscreensaver-demo'],
+["Appearance","preferences-desktop-theme",'firefox'],
+["Install Software","package-manager-icon",'package-manager'],
+["Session Settings","gnome-window-manager",'firefox'],
+["Screensaver Settings","xscreensaver",'xscreensaver-demo'],
+["Appearance","preferences-desktop-theme",'firefox'],
+["Install Software","package-manager-icon",'package-manager'],
+["Session Settings","gnome-window-manager",'firefox'],
+["Screensaver Settings","xscreensaver",'xscreensaver-demo'],
+["Appearance","preferences-desktop-theme",'firefox'],
+["Install Software","package-manager-icon",'package-manager'],
+["Session Settings","gnome-window-manager",'firefox'],
+["Screensaver Settings","xscreensaver",'xscreensaver-demo'],
+["Appearance","preferences-desktop-theme",'firefox'],
+["Install Software","package-manager-icon",'package-manager'],
+["Session Settings","gnome-window-manager",'firefox'],
+["Screensaver Settings","xscreensaver",'xscreensaver-demo'],
+["Appearance","preferences-desktop-theme",'firefox'],
+["Install Software","package-manager-icon",'package-manager'],
+["Session Settings","gnome-window-manager",'firefox'],
 ["Monitor Settings","computer",'firefo'],
 ]
 
@@ -39,7 +59,6 @@ import string
 import pygtk
 pygtk.require('2.0')
 import gtk
-import codecs
 import pango
 
 
