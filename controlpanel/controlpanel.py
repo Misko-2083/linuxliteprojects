@@ -23,12 +23,11 @@
 
 zoose_icons=[
 ["name","icon","command"],
-["Mouse&Keyboard","input-mouse",'firefox'],
-["Set Wallpaper","background",'firefox'],
+["Mouse","input-mouse",'xfce4-mouse-settings'],
 ["Screensaver Settings","xscreensaver",'xscreensaver-demo'],
 ["Appearance","preferences-desktop-theme",'xfce4-appearance-settings'],
 ["Install Software","synaptic",'gksudo synaptic'],
-["Session Settings","gnome-window-manager",'firefox'],
+["Session Settings","gnome-window-manager",'xfce4-session-settings'],
 ["User Manager","liteusermanager",'liteusermanager'],
 ["Update System","updates_ll",'liteupdater'],
 ["Monitor Settings","computer",'firefo'],
