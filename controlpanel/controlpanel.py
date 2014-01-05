@@ -27,9 +27,10 @@ zoose_icons=[
 ["Set Wallpaper","background",'firefox'],
 ["Screensaver Settings","xscreensaver",'xscreensaver-demo'],
 ["Appearance","preferences-desktop-theme",'xfce4-appearance-settings'],
-["Install Software","package-manager-icon",'package-manager'],
+["Install Software","synaptic",'gksudo synaptic'],
 ["Session Settings","gnome-window-manager",'firefox'],
 ["User Manager","liteusermanager",'liteusermanager'],
+["Update System","updates_ll",'liteupdater'],
 ["Monitor Settings","computer",'firefo'],
 ]
 
