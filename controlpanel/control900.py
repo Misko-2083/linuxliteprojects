@@ -58,7 +58,12 @@ class Startup:
            if pathinfo==None: return False
            pathnr=pathinfo[0]  
            command=self.liststore[pathnr][2]
-
+           # special case for xscreensaver, if not found displays dialog
+           if command=='xscreensaver-demo':
+              if not os.path.exists('/usr/bin/xscreensaver-demo'):
+                 dialog = gtk.MessageDialog(self.window, gtk.DIALOG_MODAL,gtk.MESSAGE_INFO,gtk.BUTTONS_OK, "apt-get install xscreensaver")
+                 result = dialog.run()
+                 dialog.destroy()
            os.system(command+' &') 
            return True
         return False
