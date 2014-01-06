@@ -73,7 +73,7 @@ class Startup:
         # create the window
         window = gtk.Window(gtk.WINDOW_TOPLEVEL)
         self.window=window
-        window.set_title('Lite-Control-Center')
+        window.set_title('Lite Control Panel')
         window.connect("destroy", self.destroy)
         window.set_border_width(3)
         window.set_position(gtk.WIN_POS_CENTER_ALWAYS)
