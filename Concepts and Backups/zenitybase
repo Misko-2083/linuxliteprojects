@@ -1,0 +1,31 @@
+#!/bin/bash
+# Linux Lite Installer Dialogue
+# Jerry Bezencon 2013
+
+INSTALLER_TITLE="Transmission Bittorrent Installer
+----------------------------------------------------------------------------------------
+This will install the Transmission Bittorrent Client.
+
+When you click on Yes, this window will close and the install will begin.
+The install time will vary based on your internet connection.
+Support is available from - http://www.transmissionbt.com/
+
+Once installed, Transmission is located in Menu, Internet.
+----------------------------------------------------------------------------------------
+Click on Yes to continue."
+
+PROCEED=$(zenity --question --title="Linux Lite Additional Programs Installer" --text="${INSTALLER_TITLE}"; echo $?)
+if [ ${PROCEED} -eq 1 ]; then
+	zenity --info --title="Exiting" --text="The installer will now exit."
+	exit;
+fi
+
+i=0
+(while [ $((i <= 100)) '=' 1 ]
+do
+    echo $i
+    sleep 1
+    i=$((i + 5))
+done) | zenity --progress --auto-close
+
+apt-get install transmission -y
