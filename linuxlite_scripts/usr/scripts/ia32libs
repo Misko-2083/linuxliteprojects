@@ -1,0 +1,16 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}****************************************"
+echo "Linux Lite Additional Programs Installer"
+echo "****************************************${normal}"
+echo ""
+echo "This will install the ${bold}ia32-libs${normal} package."
+echo "These libraries allow you to run 32bit applications in Linux Lite"
+echo "should you need to."
+echo "This window will automatically close when the install has completed."
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get install ia32-libs -y

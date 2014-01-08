@@ -1,0 +1,19 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}****************************************"
+echo "Linux Lite Additional Programs Installer"
+echo "****************************************${normal}"
+echo ""
+echo "This will install Steam, a popular cross platform gaming client."
+echo "Once installed, ${bold}Steam${normal} is located in ${bold}Menu, Games.${normal}"
+echo "This window will automatically close when the install has completed."
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get install ia32-libs -y
+sudo wget http://media.steampowered.com/client/installer/steam.deb
+sleep 2
+sudo dpkg -i steam.deb
+sudo rm -rf steam.deb

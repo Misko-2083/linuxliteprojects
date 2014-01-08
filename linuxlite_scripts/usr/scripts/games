@@ -1,0 +1,17 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}****************************************"
+echo "Linux Lite Additional Programs Installer"
+echo "****************************************${normal}"
+echo ""
+echo "This will install a basic Games Pack for Linux Lite."
+echo "The following Games will be installed:"
+echo "${bold}Solitaire, Chess, Mahjongg, Minesweeper & Hearts.${normal}"
+echo "Once installed, you will find these in the ${bold}Games Menu.${normal}"
+echo "This window will automatically close when the install has completed."
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get install aisleriot mahjongg glchess gnomine gnome-hearts -y

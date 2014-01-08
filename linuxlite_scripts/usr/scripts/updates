@@ -1,0 +1,48 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}************************"
+echo "Linux Lite 1.0.8 Updates"
+echo "************************${normal}"
+echo ""
+echo "Linux Lite will now search for updates for your computer."
+echo "Once installed, your computer will be up to date."
+echo "Simply follow the onscreen instructions."
+echo "You will also receive the latest version of the Linux Lite"
+echo "Help & Support Manual."
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get update && sudo apt-get upgrade
+
+#Linux Lite Help & Support Manual - Update
+
+echo ""
+echo "*******************************************"
+echo "Downloading latest version of the manual..."
+echo "*******************************************"
+echo ""
+sudo wget https://github.com/valtam/linuxlite_manual/archive/master.zip
+sudo unzip master.zip
+echo ""
+echo "***************************************************"
+echo "New files received."
+echo "We will now update you to the latest version of the"
+echo "Linux Lite Help & Support Manual."
+echo "***************************************************"
+echo ""
+sudo rsync -avz linuxlite_manual-master/ /usr/share/doc/xfce4-utils/html
+echo ""
+echo "*****************"
+echo "Cleaning files..."
+echo "*****************"
+sleep 3
+sudo rm -rf master.zip
+sudo rm -rf linuxlite_manual-master/
+echo ""
+echo "********************************"
+echo "All system updates are complete."
+echo "This window will now close."
+echo "********************************"
+sleep 5

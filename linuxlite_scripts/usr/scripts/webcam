@@ -1,0 +1,16 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}****************************************"
+echo "Linux Lite Additional Programs Installer"
+echo "****************************************${normal}"
+echo ""
+echo "This will install Guvcview, easy to use software for your Webcam."
+echo "Once installed, ${bold}Guvcview${normal} is located in ${bold}Menu, Multimedia.${normal}"
+echo "This window will automatically close when the install has completed."
+echo "Support is available from - http://guvcview.sourceforge.net/"
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get install guvcview -y

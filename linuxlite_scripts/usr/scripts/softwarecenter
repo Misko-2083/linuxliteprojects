@@ -1,0 +1,20 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}****************************************"
+echo "Linux Lite Additional Programs Installer"
+echo "****************************************${normal}"
+echo ""
+echo "This will the Lite Software Center."
+echo "The Lite Software Center provides an easy way to install programs and tools."
+echo "Once installed, the ${bold}Lite Software Center${normal} is located in ${bold}Menu, System.${normal}"
+echo "This window will automatically close when the install has completed."
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get install python-pysqlite2 app-install-data
+sudo dpkg -i litesoftwarecenter*
+sudo apt-get -f install -y
+sleep 3
+sudo lubuntu-software-center-build-db /var/cache/lsc_packages.db /usr/share/app-install/desktop/ /usr/share/LSC/categories.ini || true

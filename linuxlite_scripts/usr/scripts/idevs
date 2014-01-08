@@ -1,0 +1,18 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}****************************************"
+echo "Linux Lite Additional Programs Installer"
+echo "****************************************${normal}"
+echo ""
+echo "This will install the Gtkpod iPod Manager."
+echo "This will only work with selected devices,"
+echo "please check www.gtkpod.org for a list of capable devices."
+echo "Once installed, ${bold}Gtkpod${normal} is located in ${bold}Menu, Multimedia.${normal}"
+echo "This window will automatically close when the install has completed."
+echo "Support is available from - http://www.gtkpod.org/"
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get install gtkpod -y

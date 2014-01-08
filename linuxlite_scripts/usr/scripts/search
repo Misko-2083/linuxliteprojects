@@ -1,0 +1,16 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}****************************************"
+echo "Linux Lite Additional Programs Installer"
+echo "****************************************${normal}"
+echo ""
+echo "This will install Catfish, a simple to use file and folder searcher."
+echo "Once installed, ${bold}Catfish${normal} is located in ${bold}Menu, Accessories.${normal}"
+echo "This window will automatically close when the install has completed."
+echo "Support is available from - http://twotoasts.de/index.php/catfish/"
+echo ""
+echo "Please enter your password to continue..."
+sudo apt-get install catfish -y

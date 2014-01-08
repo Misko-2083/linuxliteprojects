@@ -1,0 +1,22 @@
+#!/bin/bash
+
+bold=`tput bold`
+normal=`tput sgr0`
+
+echo "${bold}******************************"
+echo "Linux Lite - Enable Auto Login"
+echo "******************************${normal}"
+echo ""
+echo "This will enable auto login for your computer."
+echo "This will ${bold}ONLY${normal} work for the current login manager."
+echo "If you install another login manager, this feature"
+echo "will not work."
+echo ""
+echo "Please enter your password to continue..."
+sudo sed -i "s/autologin-user=linux/autologin-user=$USER/g" /etc/lightdm/lightdm.conf
+echo "Auto login is now enabled."
+echo "Next time you reboot your computer, you will"
+echo "login automatically."
+echo "Press The Enter Key to close this window."
+read enterKey
+exit
