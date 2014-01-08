@@ -1,5 +1,5 @@
-linuxliteprojects
-=================
+Linux Lite Projects
+===================
 
 Scripts And Misc ideas for Linux Lite OS
 
