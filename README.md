@@ -9,8 +9,8 @@ Nothing here is final, just ideas.
 
 ##The Task List.
 
-- [ ] a task list item
-- [ ] list syntax required
-- [ ] normal **bold**
-- [ ] incomplete
-- [x] completed
+- [ ] here
+- [ ] more here
+- [ ] something more here
+- [ ] Fix Zoose
+- [x] Fix exit issue on scripts for **64bit**
