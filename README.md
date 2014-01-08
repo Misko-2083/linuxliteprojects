@@ -11,6 +11,6 @@ Nothing here is final, just ideas.
 
 - [ ] here
 - [ ] more here
-- [ ] something more here
+- [ ] Package a .deb with a few themes, curors, gtk etc
 - [ ] Fix Zoose
 - [x] Fix exit issue on scripts for **64bit**
