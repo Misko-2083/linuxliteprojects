@@ -13,3 +13,11 @@ Nothing here is final, just ideas.
 - [ ] Package a .deb with a few themes, curors, gtk etc
 - [ ] Fix Zoose
 - [x] Fix exit issue on scripts for **64bit**
+
+
+
+
+##Shoping List
+- [ ] Icons for control panel concept
+- [ ] Color Shceme outline for LL
+- [ ] New Mousepad!
