@@ -20,4 +20,6 @@ Nothing here is final, just ideas.
 ##Shoping List
 - [ ] Icons for control panel concept
 - [ ] Color Shceme outline for LL
+- [ ] work on intaller concept for single packages
+- [ ] way to toggle desktops on LL
 - [ ] New Mousepad!
