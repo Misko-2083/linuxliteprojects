@@ -23,3 +23,5 @@ Nothing here is final, just ideas.
 - [ ] work on intaller concept for single packages
 - [ ] way to toggle desktops on LL
 - [ ] New Mousepad!
+- [ ] simple way to install .tar.gz themes ?
+- [ ] Manager or tool for .face login icons
