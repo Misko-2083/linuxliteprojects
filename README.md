@@ -25,4 +25,5 @@ Nothing here is final, just ideas.
 - [ ] New Mousepad!
 - [ ] simple way to install .tar.gz themes ?
 - [ ] Manager or tool for .face login icons
-- [ ] Incorporate adduser --encrypt-home, into user manager This requires the ecryptfs-utils package. 
+- [ ] Incorporate adduser --encrypt-home, into user manager This requires the ecryptfs-utils package.
+      more reading here : https://help.ubuntu.com/community/EncryptedHome
