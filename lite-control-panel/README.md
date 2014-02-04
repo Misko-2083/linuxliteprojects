@@ -1,4 +1,11 @@
-##Steps to build deb package-
+##TODO
+- [ ] Adjust icons and programs offically.
+- [ ] Valtam add into to written by and proper copyright.
+- [ ] Add gpl2 header to all files as needed
+- [ ] eat zooses cupcakes
+
+
+##Steps To Build Deb Package
 
 
 dch -i to update changelog
@@ -13,9 +20,9 @@ dput ppa:twodopeshaggy/liteppa ../controlcenter_1.0-1ubuntu4_source.changes
 
 
 
-##control file info--
+##Control File
 
-Source: controlcenter
+Source: litecontrolpanel
 Section: base
 Priority: extra
 Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
@@ -25,7 +32,7 @@ Homepage: https://www.linuxliteos.com
 #Vcs-Git: git://git.debian.org/collab-maint/controlcenter.git
 #Vcs-Browser: http://git.debian.org/?p=collab-maint/controlcenter.git;a=summary
 
-Package: controlcenter
+Package: litecontrolpanel
 Architecture: i386 amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Linux Lite Simple Control Panel

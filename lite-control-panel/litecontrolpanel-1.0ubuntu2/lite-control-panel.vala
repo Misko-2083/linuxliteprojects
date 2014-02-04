@@ -1,10 +1,6 @@
 /*  Copyright (c) Johnathan Jenkins
  *  Written by - Johnathan "ShaggyTwoDope" Jenkins, Valtam
- *  Version - 0.1 
- *  TODO - Adjust icons and programs offically.
- *  Valtam add into to written by and proper copyright.
- *  Add gpl2 header
- *
+ *  Version - 1.0 
  */
 
 using Gtk;
