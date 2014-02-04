@@ -21,7 +21,7 @@ dput ppa:twodopeshaggy/liteppa ../controlcenter_1.0-1ubuntu4_source.changes
 
 
 ##Control File
-``
+
 Source: litecontrolpanel
 Section: base
 Priority: extra
@@ -37,4 +37,3 @@ Architecture: i386 amd64
 Depends: ${shlibs:Depends}, ${misc:Depends}
 Description: Linux Lite Simple Control Panel
  A tool to help you easily launch system tools on Linux Lite.
-``
