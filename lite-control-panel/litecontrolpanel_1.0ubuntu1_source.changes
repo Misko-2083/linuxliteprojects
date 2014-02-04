@@ -1,0 +1,43 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA1
+
+Format: 1.8
+Date: Mon, 03 Feb 2014 22:07:47 -0800
+Source: litecontrolpanel
+Binary: litecontrolpanel
+Architecture: source
+Version: 1.0ubuntu1
+Distribution: precise
+Urgency: low
+Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
+Changed-By: Johnathan Jenkins <twodopeshaggy@gmail.com>
+Description: 
+ litecontrolpanel - Linux Lite Simple Control Panel
+Changes: 
+ litecontrolpanel (1.0ubuntu1) precise; urgency=low
+ .
+   * Some Clean up and renaming.
+Checksums-Sha1: 
+ 7887acf2bd3519574ac6c7317d4516b864216b27 1463 litecontrolpanel_1.0ubuntu1.dsc
+ 870ad7a35a31073e214cf63470c77f724b74c824 16642 litecontrolpanel_1.0ubuntu1.orig.tar.gz
+ 5828bd5b0bee8aa6a95b7568137576551df2708f 2028 litecontrolpanel_1.0ubuntu1.debian.tar.gz
+Checksums-Sha256: 
+ 71cdb42f3a7df0249a413f59af748030a5b2fa5b3ad75f485dd4d4f4bb6fd158 1463 litecontrolpanel_1.0ubuntu1.dsc
+ ce629b7a23197e6f12aad37a23222c0761ccba349f593230b89ef1a291069874 16642 litecontrolpanel_1.0ubuntu1.orig.tar.gz
+ 163e0cbf41910903647d12973715e7874b7f685240b38b491ed03ec9848294d0 2028 litecontrolpanel_1.0ubuntu1.debian.tar.gz
+Files: 
+ 82555bf19e954c70dd0204b38d584022 1463 base extra litecontrolpanel_1.0ubuntu1.dsc
+ e6461c3cbab2030288e59986bad30b9c 16642 base extra litecontrolpanel_1.0ubuntu1.orig.tar.gz
+ 13deebb284ef58686f86913797891e5b 2028 base extra litecontrolpanel_1.0ubuntu1.debian.tar.gz
+
+-----BEGIN PGP SIGNATURE-----
+Version: GnuPG v1.4.11 (GNU/Linux)
+
+iQEcBAEBAgAGBQJS8IXgAAoJEHCG6cx+wyM7SLMH+wcni+Gucq0Mga6AwVFD5F+v
+zDoYv+tzP1sHVo703iDeXA8SXR5Z37qBbTNRoKpTkwkf+ML96rU2qVEHu4fsjwUl
+JgO1ke/JC2HUUaeFC3x7BOZro3RL32s1iAYBHCqyv8f8geVvo7dGMiAwlomwkygx
+TuCQBGS/L/6sfMnGZIRozvqAPsr94CK9dKDMRZtrBFrDQk1VtuzxBmTb5OncYF30
+ed7ID1bRs8POLYDbbLo8k7HceDFI56kRu42Aklf5g6fMMxoVWPEXUoG4Q7igjNv0
+nKoHNYVh9ljMnSCZ1AzvVV37xfuDl+wZEe6BYUFAQs5qSGd833H8EzN61Q9WMhc=
+=VzMJ
+-----END PGP SIGNATURE-----
