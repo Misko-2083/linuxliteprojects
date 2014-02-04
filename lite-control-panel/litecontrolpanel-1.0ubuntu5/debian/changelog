@@ -1,3 +1,9 @@
+litecontrolpanel (1.0ubuntu5) precise; urgency=low
+
+  * Fixed Desktop File 
+
+ -- Johnathan Jenkins <twodopeshaggy@gmail.com>  Tue, 04 Feb 2014 01:43:03 -0800
+
 litecontrolpanel (1.0ubuntu4) precise; urgency=low
 
   * Build Dep Adjustment valac 0.14 
