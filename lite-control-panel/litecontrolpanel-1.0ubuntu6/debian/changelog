@@ -1,3 +1,9 @@
+litecontrolpanel (1.0ubuntu6) precise; urgency=low
+
+  * Icon fix and Desktop Adjustment. 
+
+ -- Johnathan Jenkins <twodopeshaggy@gmail.com>  Tue, 04 Feb 2014 02:47:52 -0800
+
 litecontrolpanel (1.0ubuntu5) precise; urgency=low
 
   * Fixed Desktop File 

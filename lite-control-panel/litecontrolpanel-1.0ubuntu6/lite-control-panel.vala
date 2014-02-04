@@ -8,7 +8,7 @@ using Gtk;
 private class program : Gtk.Window
 {
   const string NAME         = "Lite Control Panel";
-  const string ICON         = "preferences-desktop-theme";
+  const string ICON         = "lite-control-panel";
   const int    MAX_ROW_APPS = 4;
 
   Gtk.Grid grid;

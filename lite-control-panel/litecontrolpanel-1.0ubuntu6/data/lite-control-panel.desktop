@@ -1,6 +1,6 @@
 [Desktop Entry]
 Name=Lite Control Panel
-Comment=Central place for accessing system configuration tools
+Comment=Easily launch system tools on Linux Lite
 Terminal=false
 Type=Application
 Exec=lite-control-panel

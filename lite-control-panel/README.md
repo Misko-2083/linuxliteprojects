@@ -13,7 +13,7 @@ cd to new dir created
 
 make
 
-dh_make --createorig
+dh_make --createorig # create single binary
 
 debuild -S -sa # Compiles with .orig.tar.gz USE this method!!!
 
