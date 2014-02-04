@@ -1,11 +1,9 @@
 Steps to build deb package-
-
-dh_make --createorig
-dpkg-buildpackage
-
-debuild -S -sa # Compiles with .orig.tar.gz USE this method!!!
-
 dch -i to update changelog
+
+make
+dh_make --createorig
+debuild -S -sa # Compiles with .orig.tar.gz USE this method!!!
 
 dput ppa:twodopeshaggy/liteppa ../controlcenter_1.0-1ubuntu4_source.changes
 
