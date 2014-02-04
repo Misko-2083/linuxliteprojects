@@ -9,6 +9,8 @@
 
 dch -i to update changelog
 
+cd to new dir created
+
 make
 
 dh_make --createorig

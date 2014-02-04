@@ -1,3 +1,9 @@
+litecontrolpanel (1.0ubuntu4) precise; urgency=low
+
+  * Build Dep Adjustment valac 0.14 
+
+ -- Johnathan Jenkins <twodopeshaggy@gmail.com>  Tue, 04 Feb 2014 01:07:20 -0800
+
 litecontrolpanel (1.0ubuntu3) precise; urgency=low
 
   * Build deps fix. 

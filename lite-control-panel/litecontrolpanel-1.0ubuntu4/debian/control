@@ -4,7 +4,7 @@ Priority: extra
 Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
 Build-Depends: make,
                debhelper (>= 8.0.0),
-               valac-0.20 | valac (>=0.20),
+               valac-0.14 | valac (>=0.14),
 			   libgtk-3-dev
 Standards-Version: 3.9.2
 Homepage: https://www.linuxliteos.com
