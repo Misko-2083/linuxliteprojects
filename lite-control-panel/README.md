@@ -7,11 +7,14 @@
 
 ##Steps To Build Deb Package
 
-
 dch -i to update changelog
+
 make
+
 dh_make --createorig
+
 debuild -S -sa # Compiles with .orig.tar.gz USE this method!!!
+
 dput ppa:twodopeshaggy/liteppa ../controlcenter_1.0-1ubuntu4_source.changes
 
 
