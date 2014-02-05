@@ -1,15 +1,18 @@
 ## Linux Lite Control Center
+Executing the program can be done by executing the command lite-center.
 
-Currently the bash script located in base dir, is to be placed in /usr/bin.
-And the folder litecc, in /usr/share.
-Execting the program can be done by executing the command litecontrolcenter.
+##Depends
+Keep in mind our target is solely ubuntu, these package names may vary on another distro.
 
 Depends: python, python-webkit, python-gtk2, pciutils
 
 ##Building INFO
 dch -i # it's important to follow the versioning of previous releases
+
 dh_make --createorig
+
 debuild -S -sa
+
 dput ppa:twodopeshaggy/liteppa ../lite-center_1.0-0010_source.changes 
 
 ##TODO:
