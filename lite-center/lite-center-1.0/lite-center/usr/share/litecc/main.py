@@ -41,7 +41,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 MA 02110-1301, USA. ''')
-        	about.set_authors(["Johnathan 'ShaggyTwoDope' Jenkins <shaggytwodope@linuxliteos.com>"])
+        	about.set_authors(["Johnathan 'ShaggyTwoDope' Jenkins\n<shaggytwodope@linuxliteos.com>""\nValtam\nPDQ\nZoose\nArmageddon"])
         	about.set_comments(("Designed for Linux Lite"))
         	about.set_website("http://www.linuxliteos.com")
         	about.set_logo(gtk.gdk.pixbuf_new_from_file("/usr/share/litecc/litecc.svg"))
@@ -82,27 +82,31 @@ MA 02110-1301, USA. ''')
 			
 	# need to fix urls		
 	if lllink == "help":
-		execute("firefox http://google.com")
+		execute("exo-open --launch WebBrowser http://www.linuxliteos.com/manual/")
 		return True
 		
 	if lllink == "forum":
-		execute("firefox http://google.com")
+		execute("exo-open --launch WebBrowser http://www.linuxdistrocommunity.com/forums/forumdisplay.php?fid=62")
 		return True
 
 	if lllink == "website":
-		execute("firefox http://google.com")
+		execute("exo-open --launch WebBrowser http://www.linuxliteos.com/")
 		return True
 		
 	if lllink == "irc":
-		execute("firefox http://google.com")
+		execute("exo-open --launch WebBrowser http://webchat.freenode.net/?channels=linuxlite")
 		return True
 
 	if lllink == "facebook":
-		execute("firefox http://google.com")
+		execute("exo-open --launch WebBrowser https://www.facebook.com/pages/Linuxlite/572323192787066")
 		return True
 		
 	if lllink == "twitter":
-		execute("firefox http://google.com")
+		execute("exo-open --launch WebBrowser http://www.twitter.com/linuxlite/")
+		return True
+
+	if lllink == "google":
+		execute("exo-open --launch WebBrowser https://plus.google.com/+linuxliteos/")
 		return True
 
 		
@@ -227,32 +231,32 @@ def frontend_fill():
 	page=page.replace("{string_14}", ("Kernel: "))
 	page=page.replace("{string_15}", ("UNUSED"))
 	page=page.replace("{string_16}", ("Software"))
-	page=page.replace("{string_17}", ("Working with software, packages and sources.."))
+	page=page.replace("{string_17}", ("Working with software, packages and sources."))
 	page=page.replace("{string_18}", ("Desktop"))
-	page=page.replace("{string_19}", ("Manage your desktop environment!"))
+	page=page.replace("{string_19}", ("Manage your desktop environment."))
 	page=page.replace("{string_20}", ("System"))
-	page=page.replace("{string_21}", ("This is a set of useful tools for your system.."))
+	page=page.replace("{string_21}", ("This is a set of useful tools for your system."))
 	page=page.replace("{string_22}", ("Hardware"))
-	page=page.replace("{string_23}", ("here you can use Hardware tools, install drivers..etc"))
+	page=page.replace("{string_23}", ("Here you can use Hardware tools, install drivers etc."))
 	page=page.replace("{string_24}", ("Other Tools"))
-	page=page.replace("{string_25}", ("all other tools that aren't related to any of these categories.."))
+	page=page.replace("{string_25}", ("all other tools that aren't related to any of these categories."))
 	page=page.replace("{string_26}", ("Forum"))
 	page=page.replace("{string_27}", ("Help"))
 	page=page.replace("{string_28}", ("Useful applications"))
-	page=page.replace("{string_29}", ("here you can install some applications that are hard to setup..."))
+	page=page.replace("{string_29}", ("Here you can install some applications that are hard to setup."))
 	page=page.replace("{string_30}", ("Status: "))
 	page=page.replace("{string_31}", ("Connections: "))
 	page=page.replace("{string_32}", ("Internet"))
 	page=page.replace("{string_33}", ("UNUSED"))
 	page=page.replace("{string_34}", ("UNUSED"))
 	page=page.replace("{string_35}", ("Install Desktop Extras"))
-	page=page.replace("{string_36}", ("here you can install desktop addons ... select one to install"))
+	page=page.replace("{string_36}", ("Here you can install Desktop addons, select one to install."))
 	page=page.replace("{string_37}", ("Export system details"))
 	page=page.replace("{string_38}", ("UNUSED"))
 	page=page.replace("{string_39}", ("UNUSED"))
 	page=page.replace("{string_40}", ("save packages"))
 	page=page.replace("{string_41}", ("Hardware drivers and players"))
-	page=page.replace("{string_42}", ("Manage Hardware on your system"))
+	page=page.replace("{string_42}", ("Manage Hardware on your system."))
 	page=page.replace("{string_43}", ("Nvidia graphics card driver"))
 	page=page.replace("{string_44}", ("Bluetooth driver"))
 	page=page.replace("{string_45}", ("Camera driver"))
@@ -261,6 +265,7 @@ def frontend_fill():
 	page=page.replace("{string_48}", ("IRC"))
 	page=page.replace("{string_49}", ("Facebook"))
 	page=page.replace("{string_50}", ("Twitter"))
+	page=page.replace("{string_51}", ("Google+"))
 
 
 	for i in ['os', 'arc', 'processor', 'mem', 'gfx', 'audio', 'kernel', 'host', 'netstatus', 'netip'] :
