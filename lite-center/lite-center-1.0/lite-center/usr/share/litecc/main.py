@@ -61,7 +61,7 @@ MA 02110-1301, USA. ''')
 
 		return True
 	if lllink == "exportdetails":
-		dialog = gtk.FileChooserDialog(("Select folder to export details to."), None,
+		dialog = gtk.FileChooserDialog(("Select folder to export system details to."), None,
    	gtk.FILE_CHOOSER_ACTION_SAVE, (gtk.STOCK_CANCEL, gtk.RESPONSE_CANCEL, gtk.STOCK_SAVE, gtk.RESPONSE_OK))
 		dialog.set_default_response(gtk.RESPONSE_OK)
 		dialog.set_action(gtk.FILE_CHOOSER_ACTION_SELECT_FOLDER)
@@ -130,7 +130,7 @@ def get_info(info):
 	except:
 		return " "
 def export_details(file):
-	x = open(file+"/details.txt", "w");
+	x = open(file+"/systemdetails.txt", "w");
 	x.write('''
 Operating system : %s
 Kernel : %s
@@ -248,7 +248,7 @@ def frontend_fill():
 	page=page.replace("{string_34}", ("UNUSED"))
 	page=page.replace("{string_35}", ("Install Desktop Extras"))
 	page=page.replace("{string_36}", ("here you can install desktop addons ... select one to install"))
-	page=page.replace("{string_37}", ("Export system details"))
+	page=page.replace("{string_37}", ("Export System Details"))
 	page=page.replace("{string_38}", ("UNUSED"))
 	page=page.replace("{string_39}", ("UNUSED"))
 	page=page.replace("{string_40}", ("save packages"))
