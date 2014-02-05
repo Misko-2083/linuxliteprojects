@@ -1,0 +1,15 @@
+Source: lite-control-center
+Section: base
+Priority: extra
+Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.2
+Homepage: https://www.linuxliteos.com
+#Vcs-Git: git://git.debian.org/collab-maint/lite-control-center.git
+#Vcs-Browser: http://git.debian.org/?p=collab-maint/lite-control-center.git;a=summary
+
+Package: lite-control-center
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, python, python-webkit, python-gtk2, pciutils
+Description: Linux Lite Control Center
+ A tool to help you easily control things on Linux Lite.
