@@ -19,6 +19,7 @@ debuild -S -sa
 dput ppa:twodopeshaggy/liteppa ../lite-center_1.0-0010_source.changes 
 
 ##TODO:
+- [ ] Change url for help to local manual before 2.0 relase
 - [ ] Still needs clean up and removal of icons not needed, used during testing.
 - [ ] Comment on functions more in depth.
 - [ ] Add LDC members to about dialog, pdq, armageddon etc who helped.
