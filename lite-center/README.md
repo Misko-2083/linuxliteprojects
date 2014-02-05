@@ -3,6 +3,7 @@ Executing the program can be done by executing the command lite-center.
 
 ##Depends
 Keep in mind our target is solely ubuntu, these package names may vary on another distro.
+Or by opening Lite Center from menu>settings
 
 Depends: python, python-webkit, python-gtk2, pciutils
 
