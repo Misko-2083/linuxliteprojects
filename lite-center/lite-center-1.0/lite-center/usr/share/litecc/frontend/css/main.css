@@ -19,7 +19,7 @@ html {height:100%; overflow-x :hidden; -webkit-user-select: none; cursor:default
 body {
 	background-image: url("../images/noise.png");
 	margin:0;
-	font:12px/15px "Ubuntu", sans-serif;
+	font:13px/14px "Ubuntu", sans-serif;
 	color:#8a8a8a;
 	
 	height:100%;
@@ -94,7 +94,7 @@ right: 0;
 }
 #ty {
     color: #000000;
-    font-size: 14px;
+    font-size: 13px;
     -webkit-user-select: text;
     cursor:text;
 }
@@ -224,7 +224,7 @@ margin-left: auto;
 	opacity: 1;
 }
 .tabs h1 {
-	font-size:18px;
+	font-size:16px;
 	line-height:20px;
 	margin:0 0 8px;
 	color:#2b333b;
