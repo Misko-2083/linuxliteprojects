@@ -1,0 +1,11 @@
+Package: lite-center
+Version: 1.0-0020
+Architecture: i386
+Maintainer: Johnathan Jenkins <twodopeshaggy@gmail.com>
+Installed-Size: 499
+Depends: python, python-webkit, python-gtk2, pciutils
+Section: base
+Priority: extra
+Homepage: https://www.linuxliteos.com
+Description: Linux Lite Control Center
+ A tool to help you easily control things on Linux Lite.
