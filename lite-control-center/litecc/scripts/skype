@@ -1,0 +1,10 @@
+#!/bin/bash
+mkdir skype
+cd skype
+# todo, use tmp folder, and rm .deb file?
+wget -O skype-install.deb http://www.skype.com/go/getskype-linux-deb
+sudo dpkg -i skype-install.deb
+sudo apt-get install -f --force-yes -y
+
+zenity --info --text 'sucess' --title 'Sky Installer-'
+exit
