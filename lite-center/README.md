@@ -8,6 +8,8 @@ Or by opening Lite Center from menu>settings
 Depends: python, python-webkit, python-gtk2, pciutils
 
 ##Building INFO
+Commands are run in the lite-center-1.0 folder.
+
 dch -i # it's important to follow the versioning of previous releases
 
 dh_make --createorig
