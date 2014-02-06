@@ -9,6 +9,13 @@ def execute(command, ret = True):
 		p.close
 	else:
 		p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+#explictly use subprocess
+def executep(command, ret = True):
+  	'''function to exec everything, subprocess used to fork'''
+		
+	if ret == True :
+		p = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
+
 
 
 def functions(view, frame, req, data=None):
@@ -41,7 +48,7 @@ You should have received a copy of the GNU General Public License
 along with this program; if not, write to the Free Software
 Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
 MA 02110-1301, USA. ''')
-        	about.set_authors(["Johnathan 'ShaggyTwoDope' Jenkins\n<shaggytwodope@linuxliteos.com>""\nJerry Bezencon\n<valtam@linuxliteos.com>""\n\nOther Contributors:\nPDQ\nZoose\nArmageddon"])
+        	about.set_authors(["Johnathan 'ShaggyTwoDope' Jenkins\n<shaggytwodope@linuxliteos.com>""\nJerry Bezencon\n<valtam@linuxliteos.com>""\n\nOther Contributors:\npdq\nZoose\nArmageddon"])
         	about.set_comments(("Designed for Linux Lite"))
         	about.set_website("http://www.linuxliteos.com")
         	about.set_logo(gtk.gdk.pixbuf_new_from_file("/usr/share/litecc/litecc.svg"))
@@ -70,43 +77,38 @@ MA 02110-1301, USA. ''')
 		    export_details(dialog.get_filename())
 		dialog.destroy()
 		return True
+	#uses executep to pipe process fork
 	if lllink == "script":
-		md = gtk.MessageDialog(None, 0, gtk.MESSAGE_QUESTION, gtk.BUTTONS_YES_NO, ("Continue with this operation?"))
-		md.set_default_response(gtk.RESPONSE_YES)
-		response = md.run()
-		
-		if response == gtk.RESPONSE_YES:
-			execute("x-terminal-emulator -e " + "/usr/share/litecc/scripts/" + path) 
-		md.destroy()
+		executep("/usr/share/litecc/scripts/" + path) 
 		return True
 			
 	# need to fix urls		
 	if lllink == "help":
-		execute("exo-open --launch WebBrowser http://www.linuxliteos.com/manual/")
+		execute("xdg-open file:///usr/share/doc/xfce4-utils/html/C/index.html")
 		return True
 		
 	if lllink == "forum":
-		execute("exo-open --launch WebBrowser http://www.linuxdistrocommunity.com/forums/forumdisplay.php?fid=62")
+		execute("xdg-open http://www.linuxdistrocommunity.com/forums/forumdisplay.php?fid=62")
 		return True
 
 	if lllink == "website":
-		execute("exo-open --launch WebBrowser http://www.linuxliteos.com/")
+		execute("xdg-open http://www.linuxliteos.com/")
 		return True
 		
 	if lllink == "irc":
-		execute("exo-open --launch WebBrowser http://webchat.freenode.net/?channels=linuxlite")
+		execute("xdg-open http://webchat.freenode.net/?channels=linuxlite")
 		return True
 
 	if lllink == "facebook":
-		execute("exo-open --launch WebBrowser https://www.facebook.com/pages/Linuxlite/572323192787066")
+		execute("xdg-open https://www.facebook.com/pages/Linuxlite/572323192787066")
 		return True
 		
 	if lllink == "twitter":
-		execute("exo-open --launch WebBrowser http://www.twitter.com/linuxlite/")
+		execute("xdg-open http://www.twitter.com/linuxlite/")
 		return True
 
 	if lllink == "google":
-		execute("exo-open --launch WebBrowser https://plus.google.com/+linuxliteos/")
+		execute("xdg-open https://plus.google.com/+linuxliteos/")
 		return True
 
 		
@@ -223,29 +225,29 @@ def frontend_fill():
 	page=page.replace("{string_6}", ("Architecture: "))
 	page=page.replace("{string_7}", ("Installed Memory: "))
 	page=page.replace("{string_8}", ("Devices"))
-	page=page.replace("{string_9}", ("Graphics card: "))
-	page=page.replace("{string_10}", ("Audio adapter: "))
+	page=page.replace("{string_9}", ("Graphics Card: "))
+	page=page.replace("{string_10}", ("Sound Card: "))
 	page=page.replace("{string_11}", ("Ethernet: "))
 	page=page.replace("{string_12}", ("Misc"))
 	page=page.replace("{string_13}", ("Hostname: "))
 	page=page.replace("{string_14}", ("Kernel: "))
 	page=page.replace("{string_15}", ("UNUSED"))
 	page=page.replace("{string_16}", ("Software"))
-	page=page.replace("{string_17}", ("Working with software, packages and sources."))
+	page=page.replace("{string_17}", ("Installing and maintaining software on your system."))
 	page=page.replace("{string_18}", ("Desktop"))
 	page=page.replace("{string_19}", ("Manage your desktop environment."))
 	page=page.replace("{string_20}", ("System"))
 	page=page.replace("{string_21}", ("This is a set of useful tools for your system."))
 	page=page.replace("{string_22}", ("Hardware"))
-	page=page.replace("{string_23}", ("Here you can use Hardware tools, install drivers etc."))
+	page=page.replace("{string_23}", ("Hardware management and configuration for your computer."))
 	page=page.replace("{string_24}", ("Other Tools"))
 	page=page.replace("{string_25}", ("all other tools that aren't related to any of these categories."))
 	page=page.replace("{string_26}", ("Forum"))
 	page=page.replace("{string_27}", ("Help"))
-	page=page.replace("{string_28}", ("Useful applications"))
-	page=page.replace("{string_29}", ("Here you can install some applications that are hard to setup."))
+	page=page.replace("{string_28}", ("Install Popular Software"))
+	page=page.replace("{string_29}", ("One click installs for some of your favourite applications. Be careful to select either the 32bit or 64bit installer for some software. Hover over each icon if you are not sure."))
 	page=page.replace("{string_30}", ("Status: "))
-	page=page.replace("{string_31}", ("Connections: "))
+	page=page.replace("{string_31}", ("Local IP Address: "))
 	page=page.replace("{string_32}", ("Internet"))
 	page=page.replace("{string_33}", ("UNUSED"))
 	page=page.replace("{string_34}", ("UNUSED"))
@@ -271,7 +273,7 @@ def frontend_fill():
 	for i in ['os', 'arc', 'processor', 'mem', 'gfx', 'audio', 'kernel', 'host', 'netstatus', 'netip'] :
 		page=page.replace("{%s}" %(i), get_info(i))
 
-	for i in ['packs', 'system', 'desktop', 'hardware', 'other'] :
+	for i in ['software', 'system', 'desktop', 'hardware', 'other'] :
 		page=page.replace("{%s_list}" %(i), get_modules(i))
 	filee.close()
 	return page
